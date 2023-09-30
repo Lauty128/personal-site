@@ -1,0 +1,63 @@
+.container{
+    max-width: 980px;
+    margin: 2em auto;
+    padding: 0 1em;
+    position: relative;
+}
+
+.goBack{
+    background-color: #FAEDBC;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    padding: .3em .7em;
+}
+.goBack a{
+    color: black;
+    font-size: 1.2em;
+}
+
+.title{
+    font-size: 3.3em;
+    margin-top: .2em;
+}
+
+.breadCrumbs{
+    font-size: 1.1em;
+}
+.breadCrumbs a:hover{ color: rgb(109, 140, 193); }
+
+.copyright a{
+    color: rgb(86, 126, 195);
+}
+
+/*--------------- CONTENT ---------------------*/
+.content{
+    margin-top: 3em;
+}
+.content *{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content p, 
+.content span, 
+.content a{
+    font-size: 1.3em;
+    text-align: justify;
+}
+
+.content a{
+    color: rgb(71, 126, 184);
+}
+.content blockquote{
+    margin-left: 5px;
+    padding-left: 20px;
+    border-left: 3px solid #FAEDBC;
+}
+.content blockquote > p{
+    padding: 5px 0;
+}
+
+.content img{
+    max-width: 100%;
+}
