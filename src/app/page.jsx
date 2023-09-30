@@ -1,6 +1,6 @@
 //----> Components
 import { Header, Menu } from '../components/static'
-import { AboutMe, Skills /*Projects*/ } from '../components/section'
+import { AboutMe, Skills, Projects } from '../components/section'
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <main>
         <AboutMe />
         <Skills />
-        {/* <Projects /> */}
+        <Projects />
       </main>
     </>
   )
