@@ -9,6 +9,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Carousel } from '@/src/components'
 import Link from 'next/link'
 
+//-----> Components
+import Technologies from '@/src/data/technologies.data'
+
 //-----> Functions
 async function getProject(slug){
   const project = await getFileBySlug(slug)
@@ -70,6 +73,18 @@ export default async function Project({ params }){
                 maxWidth: "850px",
               }}
             />
+          </div>
+
+          <div className={style.technologiesContainer}>
+            <h3>Tecnologias utilizadas</h3>
+            <div className={style.technologies}>
+            {
+              project.frontmatter.Technologies.map(tech=>{
+                const data = Technologies[tech]
+                return <span title={data.name}>{ data.icon }</span>
+              })
+            }
+            </div>
           </div>
 
           <article className={style.content}>
