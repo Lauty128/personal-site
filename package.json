@@ -9,12 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@czstr/ui": "^0.3.0",
+    "gray-matter": "^4.0.3",
+    "mdx-prism": "^0.3.4",
+    "next": "latest",
+    "next-mdx-remote": "^4.4.1",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-easy-swipe": "^0.0.23",
+    "react-icons": "^4.11.0",
+    "reading-time": "^1.5.0",
+    "remark-code-titles": "^0.1.2",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "sass": "^1.68.0"
   }
 }
