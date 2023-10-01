@@ -1,5 +1,6 @@
 //-----> Assets
 import style from './index.module.css'
+import { FaCode, FaDesktop, FaPager } from 'react-icons/fa'
 
 //-----> Utils
 import { getAllFilesFrontMatter, getFileBySlug } from '@/src/lib/mdx'
@@ -73,6 +74,40 @@ export default async function Project({ params }){
                 maxWidth: "850px",
               }}
             />
+          </div>
+
+          <div className={style.options}>
+            <h3>Opciones</h3>
+            {/* CODE BUTTON */}
+            {
+              project.frontmatter.code
+              ? <button className={style.option}>
+                <a href={project.frontmatter.code}>
+                  <FaCode /> Código
+                </a>
+              </button>
+              : ''
+            }
+            {/* DEMO BUTTON */}
+            {
+              project.frontmatter.demo
+              ? <button className={style.option}>
+                <a href={project.frontmatter.demo}>
+                  <FaDesktop /> Demo
+                </a>
+              </button>
+              : ''
+            }
+            {/* PAGE BUTTON */}
+            {
+              project.frontmatter.page
+              ? <button className={style.option}>
+                <a href={project.frontmatter.page}>
+                  <FaPager /> Pagina
+                </a>
+              </button>
+              : ''
+            }
           </div>
 
           <div className={style.technologiesContainer}>

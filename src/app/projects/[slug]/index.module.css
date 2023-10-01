@@ -31,7 +31,26 @@
     color: rgb(86, 126, 195);
 }
 
-/*--------------- CONTENT ---------------------*/
+
+/*--------------- OPTIONS ---------------------*/
+.options{ 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 2em;
+
+}
+.options h3{ font-size: 1.5em; margin-bottom: 0; width: 100%; }
+.option{
+    background-color: rgb(102, 102, 102);
+    border: none;
+    outline: none;
+    padding: .5em 1em;
+}
+.option a{ font-size: 1.4em; color: aliceblue }
+.option svg{ margin-right: .5em; vertical-align: text-top }
+
+/*--------------- TECHNOLOGIES ---------------------*/
 .technologiesContainer{
     margin-top: 2em;
 }
