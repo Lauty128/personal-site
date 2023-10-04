@@ -1,7 +1,7 @@
 'use client'
 
 //----> Assets
-import { /*FaCode, */FaEye/*, FaVideo, FaEyeSlash*/ } from 'react-icons/fa'
+import { FaEye } from 'react-icons/fa'
 
 //----> Components
 import Link from 'next/link'
@@ -24,44 +24,12 @@ export function ProjectCard({ project }){
                 </span>
                 <h3 className="Project__title">{project.title}</h3>
 
-                {/* <p className="Project__description">
-                    {`${project.description}`}
-                </p> */}
-
                 <button className="Project__button">
                     <Link href={'/projects/'+project.slug} >
                         <FaEye /> Ver mas
                     </Link>
                 </button>
-                {/* { project.linkCode ?
-                    <button className="Project__button"> 
-                        <a href={project.linkCode}><FaCode /> Codigo</a> 
-                    </button>
-                    : 
-                    <button className="Project__button Project__button-noAvailable"> 
-                        <a><FaCode /> Codigo no disponible</a> 
-                    </button>
-                }
-
-                { project.linkPage ?
-                    <button className="Project__button"> 
-                        <a href={project.linkPage}><FaEye /> Pagina</a> 
-                    </button>
-                    : 
-                    <button className="Project__button Project__button-noAvailable"> 
-                        <a><FaEyeSlash /> Pagina no disponible</a> 
-                    </button>
-                }
-                { project.video 
-                    ? <button className="Project__button Project__button--video"> 
-                        <a href={project.video}><FaVideo /> Video</a> 
-                        </button>
-                    : ""
-                }
-                { project.in_process
-                    ? <span style={{display:'block', marginTop:'8px', fontSize:'1.2em', color:'#FAEDBC'}}>Trabajando Actualmente..</span>
-                    : ''
-                } */}
+            
             </div>
         </div>
     )

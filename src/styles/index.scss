@@ -365,7 +365,34 @@
 
     &__title{ text-align: center; text-decoration: underline; color: #FAEDBC; margin-bottom: 3em; }
     &__container{ display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4em 2em; justify-content: center; }
+    &__viewMore{
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        transition: opacity .2s;
+        margin: auto;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    
+        &:hover{
+            opacity: .6;
+        }
 
+        & a{
+            display: flex;
+            align-items: center;
+            font-size: 1.6em;
+            padding: .3em 1.4em;
+            color: #3d3d3d;
+        }
+
+        & svg{
+            font-size: .9em;
+            vertical-align: baseline;
+            margin-right: .3em;
+        }
+    }
+    
     @media screen and (max-width:750px) {
         &{ padding:  3em .5em 4em .5em }
 
