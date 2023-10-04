@@ -16,6 +16,6 @@ export function Footer(){
             </a>
         </div>
 
-        <p className="Footer__p">©Copyright | 💻 With ReactJS</p> 
+        <p className="Footer__p">©Copyright | 💻 With NextJS</p> 
     </footer>
 }
