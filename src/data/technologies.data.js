@@ -4,8 +4,9 @@ import { FaHtml5, FaCss3Alt, FaJsSquare,
     FaBuffer, FaBootstrap, FaGitAlt } from "react-icons/fa"
 import { SiTypescript, SiJson, SiMysql, SiMarkdown, SiPhp, 
     SiGatsby, SiCanva, SiVisualstudiocode, SiMongodb, SiFigma, 
-    SiSequelize } from "react-icons/si"
+    SiSequelize, SiApache } from "react-icons/si"
 import { TbBrandNextjs } from "react-icons/tb"
+import { HiTemplate } from "react-icons/hi"
 
 const Technologies = {
     json:{
@@ -15,6 +16,10 @@ const Technologies = {
     html:{
         name:"HTML",
         icon: FaHtml5()
+    },
+    ejs:{
+        name:"EJS",
+        icon:HiTemplate()
     },
     css:{
         name:"CSS",
@@ -95,6 +100,10 @@ const Technologies = {
     gatsby:{
         name:"Gatsby",
         icon: SiGatsby()
+    },
+    apache:{
+        name:"Apache",
+        icon: SiApache()
     }
 }
 
