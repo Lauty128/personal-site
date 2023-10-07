@@ -1,6 +1,6 @@
 //----> Components
 import { Header, Menu } from '../components/static'
-import { AboutMe, Skills, Projects } from '../components/section'
+import { AboutMe, Skills, Projects, Contact } from '../components/section'
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
         <AboutMe />
         <Skills />
         <Projects />
+        <Contact />
       </main>
     </>
   )
