@@ -32,7 +32,7 @@ export default async function Project({ params }){
       <>
         <div className={style.container}>
           <button className={style.goBack}>
-            <Link href={'/'}>
+            <Link href={'/projects'}>
              {'⬅  '} Volver
             </Link>
           </button>
@@ -114,9 +114,9 @@ export default async function Project({ params }){
             <h3>Tecnologias utilizadas</h3>
             <div className={style.technologies}>
             {
-              project.frontmatter.Technologies.map(tech=>{
+              project.frontmatter.Technologies.map((tech,index)=>{
                 const data = Technologies[tech]
-                return <span title={data.name}>{ data.icon }</span>
+                return <span title={data.name} key={`${index}-${data.name}`}>{ data.icon }</span>
               })
             }
             </div>
