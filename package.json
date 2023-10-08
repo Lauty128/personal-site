@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@czstr/ui": "^0.3.0",
+    "@emailjs/browser": "^3.11.0",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.4",
     "next": "latest",
