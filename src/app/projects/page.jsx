@@ -1,5 +1,5 @@
 //----> Assets
-import { FaArrowAltCircleLeft, FaRegClock } from "react-icons/fa"
+import { FaArrowAltCircleLeft, FaRegClock, FaDesktop } from "react-icons/fa"
 import style from "./index.module.css"
 
 //----> Utils
@@ -41,9 +41,24 @@ export default async function Projects(){
                     </span>
                     <h2 className={style.project__h2}>{project.title}</h2>
                     <p className={style.project__description}>{project.description}</p>
-                    <Link href={'/projects/'+project.slug} className={style.project__viewMore}>
-                        Ver mas
-                    </Link>
+                    <div className={style.project__buttons}>
+                        <Link href={'/projects/'+project.slug} className={style.project__viewMore}>
+                            Ver mas
+                        </Link>
+                        {
+                            (project.demo)
+                            ? <a href={project.demo} 
+                                className={style.project__viewMore} 
+                                target="__blank"
+                                style={{
+                                    backgroundColor:'#FAEDBC'
+                                }}
+                              >
+                                <FaDesktop /> Demo
+                            </a>
+                            : ''
+                        }
+                    </div>
                 </div>
             </div>
         )

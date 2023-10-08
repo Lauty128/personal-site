@@ -56,8 +56,12 @@
     margin-bottom: 0;
 }
 
-.project__date{
+.project__buttons{
+    display: flex;
+    gap: 1em;
 }
+/* .project__date{
+} */
 .project__date svg{
     vertical-align: text-bottom;
     margin-right: 7px;
