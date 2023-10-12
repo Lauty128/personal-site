@@ -1,5 +1,6 @@
 //-----> Assets
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"
+import { MdLocationPin, MdEmail } from "react-icons/md"
 
 //-----> Components
 import { Form } from "../"
@@ -34,10 +35,12 @@ export function Contact(){
 
         <div className="ContactMe__information">
             <span>
+                <MdLocationPin />
                 Olavarria, Buenos Aires, Argentina
             </span>
             <span>
-
+                <MdEmail />
+                lautarosilverii@gmail.com
             </span>
         </div>
 

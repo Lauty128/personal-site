@@ -588,6 +588,20 @@
         pointer-events:none;
         animation: submitForm 1.2s infinite ease-in-out;
     }
+
+    &__information{
+        & span{
+            display: block;
+            margin-top: .5em;
+            font-size: 1.1em;
+        }
+        & svg{
+            vertical-align: bottom;
+            margin-right: .5em;
+            font-size: 1.2em;
+            color: #FAEDBC;
+        }
+    }
 }
 
 @keyframes submitForm{
