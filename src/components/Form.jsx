@@ -89,7 +89,7 @@ export function Form(){
                 </textarea>
             </div>
 
-            <input type="submit" value="ENVIAR" className="ContactMe__submit" 
+            <input type="submit" value="Enviar" className="ContactMe__submit" 
             data-aos="zoom-out" data-aos-duration="700" ref={submitButton} />
 
         </form>

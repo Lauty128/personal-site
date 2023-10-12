@@ -1,16 +1,21 @@
 //----> Components
-import { Header, Menu } from '../components/static'
-import { AboutMe, Skills, Projects, Contact } from '../components/section'
+import { Menu } from '../components/static'
+import { AboutMe, Skills, Projects, Contact , Header, MoreAboutMe } from '../components/section'
 
 export default function Home() {
   return (
     <>
       <Menu />
-      <Header />
       <main>
+        <Header />
         <AboutMe />
+        <hr className='separator' />
         <Skills />
+        <hr className='separator' />
         <Projects />
+        <hr className='separator' />
+        <MoreAboutMe />
+        <hr className='separator' />
         <Contact />
       </main>
     </>

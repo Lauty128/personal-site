@@ -20,21 +20,14 @@
     align-items: center;
     flex-wrap: wrap;
     color: #E0E0E0;
-    background-color: #545454;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
     position: fixed;
     z-index: 9;
 
-    //--------------- BLOG
-    &--blog{
-        justify-content: left;
-        padding: .5em 1em;
-        
-        &__link{
-            display: flex;
-            align-items: center;
-            gap: .4em;
-            & > span{ color: #FAEDBC }
-        }
+    &__h1{
+        font-size: 1.5em;
+        padding: 1em 0 1em .4em;
     }
 
     // --------------- IMG   
@@ -105,49 +98,50 @@
 //------------------------------------------
 //---------------- HEADER ------------------
 //------------------------------------------
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
 .Header{
-    width: 100vw;
-    height: 100vh;
     position: relative;
     display: flex;
-    background-image: url(/office-g57d11e9a5_1920.jpg);
-    background-position:center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    // justify-content: center;
+    align-items: end;
+    gap: 2em;
 
+    &__img{
+        width: 150px;
+        height: 150px;
+        border-radius: 32% 68% 70% 30% / 40% 53% 47% 60% ;
+    }
     // ------------------------- TEXT
-    &__textContainer{
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        z-index: 5;
+    &__h1{ 
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.06em solid #a5a5a5;
+        animation: typing 2.8s steps(16) .6s 1 normal both, blink 1s steps(1) infinite;
+        margin: 0; 
+        color: #FAEDBC; 
+        font-size: 3em; 
+        line-height: 80%;
     }
-    &__h1{ margin: 0; color: #FAEDBC; font-size: 3em; line-height: 80% }
-    &__h3{ margin-bottom: 1em; color: #E0E0E0; font-weight: 300 }
-    
-    //----------------------- NETWORKS   
-    &__networks{ margin-top: .5em; display: flex; gap: 1em; }
-    &__network-icon{
-        border: 2px solid #FAEDBC;
-        border-radius: 50%;
-        display: flex;
-        padding: .3em;
-        font-size: 1.8em;
-        color: #c2c2c2;
-        cursor: pointer;
-        
-        &:hover{ color: #fff }
+    &__h3{ 
+        margin-bottom: 1em; 
+        color: #E0E0E0; 
+        font-weight: 300;
+        font-size: 1.3em;
     }
-
 }
 
 
@@ -181,7 +175,7 @@
 
 
 //--------------------------------- @MEDIA OF <MENU> AND <HEADER>
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
     .Menu{
         &__button{ display: block }
         
@@ -191,6 +185,7 @@
             flex-direction: column;
             padding: 1em 0;
         }
+
         &__h3--blog{  margin-left: 0;  background-color: transparent; & > a{ color: #FAEDBC; padding: 0 } }
         &__h3::after{ width: 100%; left: 0; transform-origin: left; transform: scaleX(0); }
         &__h3:hover::after{ transform: scaleX(1)  }
@@ -198,16 +193,22 @@
         &__links--active{ margin-top: 0 }
     }
 
+    .Header{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1em;
+    }
+
 }
 
 @media screen and (max-width:500px) {
-    .Header__h1{ font-size: 2.5em }
-    .Header__network-icon{ font-size:1.3em }
+    .Header__h1{ font-size: 2em }
+    .Header__h3{ font-size: 1.1em; margin-top: .5em }
 }
 
 @media screen and (max-width:390px) {
-    .Header__h1{ font-size: 2em }
-    .Header__h3{ font-size: 1.1em; margin-top: .5em }
+    .Header__h1{ font-size: 1.7em }
 }
 
 //-----------------------------------------------------------------------------------------------
@@ -217,39 +218,46 @@
 //--------------------------------------------
 //---------------- ABOUT ME ------------------
 //--------------------------------------------
-
+.separator{
+    margin: 3em 0;
+    border-top:none;
+    border-color: #4b4b4b;
+}
 .AboutMe{ 
     width: 100%; 
-    padding: 5em 0; 
+    padding-top: 5em;
+    //margin-bottom: 5em;
     padding-bottom: 0;
 
     &__container{
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
         gap: 3em;
-        margin-bottom: 5em;
     }
     
-    &__imageContainer{ width: 17em; height: 20em; background-color: #FAEDBC;}
-    &__image{ 
-        width: 100%;  
-        height: 100%; 
-        margin: -1em 0em 0 1em; 
-        box-shadow: -.2em .2em 7px rgba(0,0,0,0.4);
-        object-position: 0 -20px;
+    &__h3{ 
+        width: fit-content;
+        padding-right: 15px;
+        margin-bottom: .6em; 
+        color: #FFFF;
+        border-bottom: 2px solid #ffff; 
+        font-size: 24px; 
     }
+    &__p { margin: 0; color: #bababa; font-size: 1.1em; }
     
-    &__textContainer{ max-width: 500px }
-    &__h3{ margin-bottom: .6em; color: #FAEDBC; font-size: 24px; }
-    &__p { margin: 0; color: #E0E0E0; font-size: 1.1em; }
-    
+    &__button--pk{
+        background-color: #FAEDBC;
+        font-size: 1.1em;
+        padding: .4em;
+        margin-top: 2.2em;
+        color: #3d3d3d;
+
+        & > svg{ vertical-align: bottom; margin-right: .3em; }
+    }
     &__button{
         position: relative;
         display: flex;
         background-color: #E0E0E0;
         width: fit-content;
-        margin-top: 2em;
+        margin-top: .8em;
         padding: .5em;
         overflow: hidden;
         z-index: 8;
@@ -270,22 +278,22 @@
     .AboutMe__button svg{ margin: 0; z-index: 10; color: #3d3d3d; }
 }
 
-//--------------------------------- @MEDIA 
-@media screen and (max-width:1050px) {
-    .Section{ padding: 5em 5% }
-}
+// //--------------------------------- @MEDIA 
+// @media screen and (max-width:1050px) {
+//     .Section{ padding: 5em 5% }
+// }
 
-@media screen and (max-width:950px) {
-    .AboutMe__textContainer{ max-width: 350px }
+// @media screen and (max-width:950px) {
+//     .AboutMe__textContainer{ max-width: 350px }
     
-}
+// }
 
 @media screen and (max-width:700px){
     .AboutMe{
-        &__container{ flex-direction: column; align-items: center; margin-bottom: 3em; padding: 1em;}
-        &__textContainer{ display: flex; flex-direction: column; align-items: center; max-width: 600px; }
-        &__h3{ text-align: center }
-        &__p{ text-align: justify}
+        padding-top: 2em;
+        margin-bottom: 3em;
+        // &__container{ flex-direction: column; align-items: center; margin-bottom: 3em; padding: 1em;}
+        // &__textContainer{ display: flex; flex-direction: column; align-items: center; max-width: 600px; }
     }
 }
 
@@ -294,65 +302,74 @@
 //---------------- SKILLS --------------------
 //--------------------------------------------
 .Skills{
-    width: 100%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: flex-start;
-    gap: 0;
-    max-width: 1200px;
-    padding: 20px;
-    padding-bottom: 3em;
+    
 
-    &__moreInfo{
-        & > h3{ font-size: 1.5em }
-        & > p{ font-size: 1.2em }
+    &__h3{ 
+        width: fit-content;
+        padding-right: 15px;
+        margin-bottom: .6em; 
+        color: #FFFF;
+        border-bottom: 2px solid #ffff; 
+        font-size: 24px; 
     }
 
-    &__container{ display: flex; flex-wrap: wrap; gap: 1em; margin-bottom: 2.5em; }
-    &__h2{ font-size: 1.3em; color: $primary-color-text; border-bottom: .08em solid currentColor; padding: .2em .3em; width: 100% }
+    // ICONS AND EFFECTS
+    &__container{ 
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 1.5em 1.8em; 
+        margin-top: 1.5em; 
+        margin-bottom: 2.5em; 
+    }
     &__icon{
-        width: 2em;
-        height: 2em;
-        transition: transform linear .2s;
+        width: 100%;
+        position: relative;
+        transition: all linear .2s;
     
-       &:hover{ transform: scale(1.15) }
-       & svg{ width: 100%; height: 100%; color: #FAEDBC }
+       & svg{ width: 100%; height: 100%; color: #a5a5a5 }
     }
-
-    &__button{
-        background-color: #FAEDBC;
-        font-size: 1.2em;
-        padding: .5em;
-        margin-top: 2em;
-        color: #3d3d3d;
-
-        & > svg{ vertical-align: bottom; margin-right: .3em; }
+    &__icon[title]:hover:before {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        content: attr(title);
+        margin-top: 0.5em;
+        padding: 0.5em;
+        width: 150px;    /* change it */
+        overflow: hidden;
+        color: #FFF;
+        text-align: center;
+        background-color: #222222;
     }
     
-    
-    @media screen and (max-width:900px){
-        grid-template-columns: 1fr;
 
-        &__div{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1em 2em;
+    @media (hover:hover) {
+        // SCALE AND COLOR ANIMATION
+        &__icon:hover{
+            transform: scale(1.15);
+            & svg{
+                color: #FAEDBC;
+            }
         }
-        &__container{ justify-content: center; width: 40%; }
-        &__h2{ text-align: center; }
+        // LOS ICONOS NO HOVER TENDRAN UNA OPACIDAD DE 0.3
+        &__container:hover >  &__icon:not(:hover){
+            opacity: 0.3;
+        }
+    }
+
+    @media screen and (max-width:1000px){
+        &__icon[title]:hover:before{
+            width: 100px;
+            font-size: .8em;
+        }
     }
     
-    @media screen and (max-width:600px){
-        padding: 3em 1em;
-        gap: 3em;
-
-        &__container{ width: 100% }
-        &__h2{ font-size: 1.4em }
-        &__icon{ width: 2.5em; height: 2.5em } 
-        
+    @media screen and (max-width:500px){
+        &__container{
+            grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+        }
     }
 }
 
@@ -360,27 +377,33 @@
 //---------------- PROJECTS --------------------
 //----------------------------------------------
 .Projects{
-    background-color: rgb(68, 68, 68);
-    padding: 3em 1em 8em 1em;
 
-    &__title{ text-align: center; text-decoration: underline; color: #FAEDBC; margin-bottom: 3em; }
-    &__container{ display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4em 2em; justify-content: center; }
+    &__h3{ 
+        width: fit-content;
+        padding-right: 15px;
+        margin-bottom: .6em; 
+        color: #FFFF;
+        border-bottom: 2px solid #ffff; 
+        font-size: 24px; 
+    }
+
+    &__container{
+        margin-top: 2em;
+    }
+
     &__viewMore{
         border-radius: 5px;
         outline: none;
         border: none;
         transition: opacity .2s;
-        margin: auto;
-        margin-left: 50%;
-        transform: translateX(-50%);
-    
-        &:hover{
-            opacity: .6;
-        }
-
+        width: 100%;
+        
+        &:hover{ opacity: .6 }
+        
         & a{
             display: flex;
             align-items: center;
+            justify-content: center;
             font-size: 1.6em;
             padding: .3em 1.4em;
             color: #3d3d3d;
@@ -394,59 +417,38 @@
     }
     
     @media screen and (max-width:750px) {
-        &{ padding:  3em .5em 4em .5em }
-
+        &{ padding:  1em .5em 2em .5em }
         &__container{ gap: 2em }
+
+        &__viewMore{
+            & a{ font-size: 1.3em }
+            & svg{ font-size: .8em }
+        }
     }
 }
 
 /*-------------------- Project Card ------------------*/
 .Project{ 
     gap: .5em; 
-    width: 25em;  
+    width: 80%;  
     border-bottom: .001em solid var(--tertiary-color-text);
     padding-bottom: 1em;
+    padding-left: 2em;
     margin-bottom: 2em;
+    position: relative;
 
-    /* ------------------ Image Box */
-    &__imageContainer{ 
-        position: relative; 
-        height: 15em; 
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.767);
-        overflow: hidden;
-        margin-bottom: .5em;
-        top: 0;
-    }
-    &__images{
-        display: flex;
-        width: max-content;
-        height: 100%;   
-        transition: margin-left .4s;
-    }
-
-    &__image{ width: 25em; height: 100% }
-
-    &__arrowLeft, &__arrowRight{
+    &__arrow{
+        color: #FAEDBC;
         position: absolute;
-        font-size: 1.4em;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 100%;
-        padding: 0 5px;
-        cursor: pointer;
-        transition: background-color .2s;
-        color: $principal-color;
-        
-        &:hover{
-            background-color: #9c9c9c4b;
-        }
+        left: 0;
+        top: 1em;
+        font-size: 1.3em;
     }
-    &__arrowRight{ right: 0; }
-    
+
 
     /* ------------------ Text Box */
-    &__title{ color: $primary-color-text; font-size: 1.5em; margin-bottom: .5em; text-transform: uppercase; }
-    &__description{ color: $secundary-color-text; margin: .5em 0 2em }
+    &__title{ color: $primary-color-text; font-size: 1.5em; margin-bottom:0; text-transform: uppercase; }
+    &__p{ color: $secundary-color-text; margin-top: 0;  }
     
     &__button{ 
         margin-right: 1em; 
@@ -466,43 +468,12 @@
         &--noAvailable a{ color: rgb(70, 70, 70) }
         &:hover{ background-color: rgb(199, 198, 198) }
     }
-    
-    /*----------------- Technology Icons */
-    &__technologiesContainer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(58, 58, 58, 0.767);
-    display: flex;
-    align-items: flex-start;
-    padding: .3em;
-    gap: 1em;
-    width: 100%
-    }
-    &__technology{ color: #FAEDBC }
-    &__technology svg{ vertical-align: text-top; font-size: 1.3em; transition: transform linear .2s }
-    &__technology svg:hover{ transform: scale(1.15) }
-    
+   
 
     /*-------------------------- @Media ------------------------------*/
-    @media screen and (max-width:800px) {
-        &{
-            max-width: 25em;
-            flex-direction: column; 
-            align-items: center;  
-        }
-    }
-
     @media screen and (max-width:550px) {
         &{ width: 100% }
-    }
-
-    @media screen and (max-width:400px) {
-        &__button--video{ margin-top: 10px }
-
-        &__arrowLeft, &__arrowRight{ display: none }
-
-        &__images{ margin-left: 0; }
+        &__button a{ font-size: 1em; }
     }
 }
 
@@ -510,14 +481,80 @@
 //---------------- CONTACT --------------------
 //----------------------------------------------
 .ContactMe{ 
-    padding: 3em 2em ;
+    padding-bottom: 3em;
 
-    &__h2{  color: #FAEDBC; text-align: center; text-decoration: underline }
+    &__h3{ 
+        width: fit-content;
+        padding-right: 15px;
+        margin-bottom: .6em; 
+        color: #FFFF;
+        border-bottom: 2px solid #ffff; 
+        font-size: 24px; 
+    }
+
+    &__cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        justify-content: center;
+        gap: 1.5em;
+        position: relative;
+        margin-bottom: 2em;
+    }
+
+    &__card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #545454;
+        border-radius: 10px;
+        padding: 1em;
+        transform: scale(1);
+        transition: all .3s;
+    
+        & svg{
+            font-size: 2em;
+            margin-bottom: .2em;
+            transition: color .3s;
+            color: #a5a5a5;
+        }
+    }
+
+    @media (hover:hover) {
+        &__card:hover{
+            transform: scale(1.1);
+            border-color: #FAEDBC;
+    
+            & svg{ color: #FAEDBC; }
+            & .ContactMe__cardTitle{ color: #FAEDBC; }
+        }
+        &__cards:hover >  &__card:not(:hover){
+            opacity: 0.4;
+        }
+    }
+
+    &__cardTitle{
+        font-weight: 500;
+        color: #E0E0E0;
+        font-size: 1.3em;
+        transition: color .3s;
+    }
+
+    &__inputContainer{
+        position: relative;
+
+        & svg{
+            color: #FAEDBC;
+            position: absolute;
+            bottom: 13px;
+            font-size: 1.3em;
+            left: 10px;
+        }
+    }
     
     &__form{
         margin: 2em auto 2em auto;
-        width: 70%;
-        display:flex;
+        width: 100%;
+        display:flex; 
         flex-direction: column;
         gap: 1.5em;
         align-items: stretch;
@@ -529,21 +566,20 @@
         width: 100%;
         border: none;
         outline: none;
-        font-size: 1.4em;
+        font-size: 1.2em;
         padding: .5em;
         background-color: rgb(109, 109, 109);
         color: #fff;
         box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
-    &__textarea{ resize: none; height: 15em }
+    &__textarea{ resize: none; height: 15em; }
     &__input--error{ color:  rgb(146, 25, 25) }
     
     &__submit{
-        padding: .8em;
+        padding: .4em;
         background-color: #FAEDBC;
         border: none;
         cursor: pointer;
-        font-weight: 700;
         color: rgb(88, 88, 88);
         font-size: 1.2em;
         box-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -551,15 +587,6 @@
     &__submit--block{
         pointer-events:none;
         animation: submitForm 1.2s infinite ease-in-out;
-    }
-
-    @media screen and (max-width:800px){
-        &__form{ width: 90% }
-    }
-
-    @media screen and (max-width:510px){
-        &{ padding: 3em 1em }
-        &__form{ width: 100% }
     }
 }
 

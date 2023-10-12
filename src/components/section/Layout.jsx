@@ -1,5 +1,5 @@
 //---- Components
-import { AboutMe, Skills, Projects } from './';
+import { AboutMe, Skills, Projects, MoreAboutMe } from './';
 
 export function MainLayout(){
 

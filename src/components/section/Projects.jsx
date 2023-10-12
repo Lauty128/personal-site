@@ -23,7 +23,7 @@ export async function Projects(){
     return(
         <section className="Projects" id="Projects">
             
-            <h2 className="Projects__title">PROYECTOS</h2>
+            <h3 className="Projects__h3">Proyectos</h3>
 
             <div className="Projects__container">
                 { <ProjectList projects={projects} /> }

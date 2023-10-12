@@ -1,10 +1,10 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
+//import { serialize } from "next-mdx-remote/serialize";
 import readingTime from "reading-time";
-import mdxPrism from "mdx-prism";
-import remarkGfm from "remark-gfm";
+//import mdxPrism from "mdx-prism";
+//import remarkGfm from "remark-gfm";
 
 const root = process.cwd();
 

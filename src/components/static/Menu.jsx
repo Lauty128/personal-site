@@ -4,7 +4,7 @@ export function Menu(){
     
     //-------------------- Menu Button
     const toggleButton = (e)=>{
-        if(window.innerWidth > 700) return;
+        if(window.innerWidth > 800) return;
 
         let target = e.target
         if(target.parentNode.classList.contains("Menu__h3")){
@@ -20,8 +20,9 @@ export function Menu(){
 
     return (
         <nav className="Menu" id="Menu">
-            <img src={'/logo-mini.png'} alt="logo portafolio" className="Menu__image" />
-        
+            {/* <img src={'/logo-mini.png'} alt="logo portafolio" className="Menu__image" /> */}
+            <h1 className="Menu__h1">Lautaro Silverii</h1>
+
             <div className="Menu__button" onClick={toggleButton}>
                 <span className="Menu__buttonDiv1"></span>
                 <span className="Menu__buttonDiv2"></span>
