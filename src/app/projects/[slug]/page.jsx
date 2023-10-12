@@ -116,7 +116,10 @@ export default async function Project({ params }){
             {
               project.frontmatter.Technologies.map((tech,index)=>{
                 const data = Technologies[tech]
-                return <span title={data.name} key={`${index}-${data.name}`}>{ data.icon }</span>
+                return <div key={`${index}-${data.name}`} title={data.name} className={style.technology}>
+                  { data.icon }
+                  <span>{ data.name }</span>
+                </div>
               })
             }
             </div>
