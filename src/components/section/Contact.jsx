@@ -9,7 +9,7 @@ import { Form } from "../"
 export function Contact(){
 
     return(
-    <section className="ContactMe" id="ContactMe">
+    <section className="ContactMe" id="ContactMe" style={{ scrollMarginTop:'5em' }}>
         
         <div className="ContactMe__cards">
             <a className="ContactMe__card" href="https://www.linkedin.com/in/lautaro-silverii-8a5750209/">

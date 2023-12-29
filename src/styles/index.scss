@@ -570,24 +570,22 @@
         padding: .5em;
         background-color: rgb(109, 109, 109);
         color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
-    &__textarea{ resize: none; height: 15em; }
-    &__input--error{ color:  rgb(146, 25, 25) }
+    &__textarea{ resize: none; height: 15em }
+    &__label--error{  color:rgb(146, 25, 25) }
     
     &__submit{
         padding: .4em;
         background-color: #FAEDBC;
         border: none;
         cursor: pointer;
-        color: rgb(88, 88, 88);
+        color: rgb(36, 36, 36);
         font-size: 1.2em;
         box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        transition: opacity .5s;
     }
-    &__submit--block{
-        pointer-events:none;
-        animation: submitForm 1.2s infinite ease-in-out;
-    }
+    &__submit:hover{ opacity: .6 }
+    &__submit--block{ pointer-events:none; animation: submitForm 1.2s infinite ease-in-out }
 
     &__information{
         & span{

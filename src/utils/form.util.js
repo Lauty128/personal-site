@@ -73,7 +73,7 @@ export function sendData(values, submitButton, newMessage){
             if(response.status == 200){
                 submitButton.classList.remove('ContactMe__submit--block')
                 newMessage({
-                    message:'Los datos fueron enviados correctamente.\nGracias por comunicarte',
+                    message:'Los datos fueron enviados correctamente.',
                     type:'OK'
                 })
             }

@@ -1,9 +1,11 @@
 //----> Assets
 import '../styles/index.scss'
+import 'react-toastify/dist/ReactToastify.css';
 import { Inter } from 'next/font/google'
 
 //----> Components
 import { Footer } from '../components/static'
+import { ToastContainer } from 'react-toastify';
 
 //----> Configs
 const inter = Inter({ subsets: ['latin'] })
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         {children}
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   )
