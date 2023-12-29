@@ -4,7 +4,7 @@
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa'
 
 //----> Data
-import Technologies from "@/src/data/technologies.data";
+// import Technologies from "@/src/data/technologies.data";
 
 //----> Hooks
 import { useState } from "react"

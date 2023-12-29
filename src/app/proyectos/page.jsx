@@ -42,7 +42,7 @@ export default async function Projects(){
                     <h2 className={style.project__h2}>{project.title}</h2>
                     <p className={style.project__description}>{project.description}</p>
                     <div className={style.project__buttons}>
-                        <Link href={'/projects/'+project.slug} className={style.project__viewMore}>
+                        <Link href={'/proyectos/'+project.slug} className={style.project__viewMore}>
                             Ver mas
                         </Link>
                         {
@@ -74,7 +74,7 @@ export default async function Projects(){
             <span className={style.breadCrumbs}>
                 <Link href={'/'}>Inicio</Link>
                 {' / '}
-                <Link href={'/projects'}>Proyectos</Link>
+                <Link href={'/proyectos'}>Proyectos</Link>
             </span>
 
             <section className={style.projectsContainer}>

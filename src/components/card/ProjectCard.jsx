@@ -1,11 +1,10 @@
 'use client'
 
 //----> Assets
-import { FaEye, FaArrowRight } from 'react-icons/fa'
+import { FaEye, FaArrowRight } from 'react-icons/fa';
 
 //----> Components
-import Link from 'next/link'
-import { ImagesCarrouselForProject } from './'
+import Link from 'next/link';
 
 
 export function ProjectCard({ project }){
@@ -26,7 +25,7 @@ export function ProjectCard({ project }){
                 <p className='Project__p'>{project.description}</p>
 
                 <button className="Project__button">
-                    <Link href={'/projects/'+project.slug} >
+                    <Link href={'/proyectos/'+project.slug} >
                         <FaEye /> Ver mas
                     </Link>
                 </button>

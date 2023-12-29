@@ -21,7 +21,7 @@ export async function Projects(){
     const projects = await getProjects()
 
     return(
-        <section className="Projects" id="Projects">
+        <section className="Projects" id="Projects" style={{ scrollMarginTop:'5em' }}>
             
             <h3 className="Projects__h3">Proyectos</h3>
 
@@ -30,7 +30,7 @@ export async function Projects(){
             </div>
 
             <button className='Projects__viewMore'>
-                <Link href={'/projects'}>
+                <Link href={'/proyectos'}>
                     <FaArchive />
                     Lista de proyectos
                 </Link>

@@ -32,7 +32,7 @@ export default async function Project({ params }){
       <>
         <div className={style.container}>
           <button className={style.goBack}>
-            <Link href={'/projects'}>
+            <Link href={'/proyectos'}>
              {'⬅  '} Volver
             </Link>
           </button>
@@ -42,9 +42,9 @@ export default async function Project({ params }){
           <span className={style.breadCrumbs}>
             <Link href={'/'}>Inicio</Link>
             {' / '}
-            <Link href={'/projects'}>Proyectos</Link>
+            <Link href={'/proyectos'}>Proyectos</Link>
             {' / '}
-            <Link href={'/projects/'+project.frontmatter.slug}>{project.frontmatter.title}</Link>
+            <Link href={'/proyectos/'+project.frontmatter.slug}>{project.frontmatter.title}</Link>
           </span>
 
           {/* <ImagesCarrousel images={project.frontmatter.images} alt={project.frontmatter.alt} /> */}
