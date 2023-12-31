@@ -1,27 +1,17 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-//import { serialize } from "next-mdx-remote/serialize";
 import readingTime from "reading-time";
-//import mdxPrism from "mdx-prism";
-//import remarkGfm from "remark-gfm";
 
 const root = process.cwd();
 
-export const getFiles = async (type) =>
-  fs.readdirSync(path.join(root, "projects", type));
+export const getFiles = async (type, directory) =>
+  fs.readdirSync(path.join(root, directory, type));
 
-export const getFileBySlug = async (slug) => {
-  const mdxSource = fs.readFileSync(path.join(root, "projects", `${slug}.mdx`), "utf8")
+export const getFileBySlug = async (directory, slug) => {
+  const mdxSource = fs.readFileSync(path.join(root, directory, `${slug}.mdx`), "utf8")
 
   const { data, content } = await matter(mdxSource);
-
-  // const source = await serialize(content, {
-  //   mdxOptions: {
-  //     remarkPlugins: [require("remark-code-titles"), remarkGfm],
-  //     rehypePlugins: [mdxPrism],
-  //   }
-  // });
 
   return {
     source: content,
@@ -33,12 +23,12 @@ export const getFileBySlug = async (slug) => {
   };
 };
 
-export const getAllFilesFrontMatter = async () => {
-  const files = fs.readdirSync(path.join(root, "projects"));
+export const getAllFilesFrontMatter = async (directory) => {
+  const files = fs.readdirSync(path.join(root, directory));
   
   return files.reduce((allPosts, postSlug) => {
     const mdxSource = fs.readFileSync(
-      path.join(root, "projects", postSlug),
+      path.join(root, directory, postSlug),
       "utf8"
     );
     const { data } = matter(mdxSource);

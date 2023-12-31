@@ -10,7 +10,7 @@ import { FaArchive } from 'react-icons/fa';
 
 //-------> Server functions
 async function getProjects(){
-    const projects = await getAllFilesFrontMatter();
+    const projects = await getAllFilesFrontMatter('projects');
 
     return projects.sort(orderByDate).slice(0,3)
 }

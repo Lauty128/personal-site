@@ -8,12 +8,11 @@ import { orderByDate } from "@/src/lib/order";
 
 //----> Components
 import Link from "next/link"
-// import { Header } from '../../components/static'
 
 
 //-------> Server functions
 async function getProjects(){
-    const projects = await getAllFilesFrontMatter();
+    const projects = await getAllFilesFrontMatter('projects');
 
     return projects.sort(orderByDate)
 }

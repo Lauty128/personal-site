@@ -15,7 +15,7 @@ import Technologies from '@/src/data/technologies.data'
 
 //-----> Functions
 async function getProject(slug){
-  const project = await getFileBySlug(slug)
+  const project = await getFileBySlug('projects',slug)
 
   return project
 }
@@ -134,7 +134,7 @@ export default async function Project({ params }){
 }
 
 export async function generateStaticParams(){
-    const projects = await getAllFilesFrontMatter();
+    const projects = await getAllFilesFrontMatter('projects');
     
     return projects.map((project) => ({
       slug: project.slug,
