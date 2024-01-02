@@ -81,10 +81,10 @@ export default async function Articles({ params }){
                 {
                     paginationArray.map((pagination)=>{
                         if(pagination == page){
-                            return <Link href={`#`} className={`${style.pagination__a} ${style['pagination__a--active']}`}>{pagination}</Link>
+                            return <Link href={`#`} className={`${style.pagination__a} ${style['pagination__a--active']}`} key={`${pagination}`}>{pagination}</Link>
 
                         }
-                        return <Link href={`/blog/page/${pagination}`} className={style.pagination__a}>{pagination}</Link>
+                        return <Link href={`/blog/page/${pagination}`} className={style.pagination__a} key={`${pagination}`}>{pagination}</Link>
                     })
                 }
             </div>

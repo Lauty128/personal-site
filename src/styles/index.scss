@@ -397,8 +397,12 @@
         border: none;
         transition: opacity .2s;
         width: 100%;
-        
-        &:hover{ opacity: .6 }
+        box-shadow: 0 0 3px 0px #ffffff80;
+        transition: box-shadow .3s;
+
+        &:hover{
+            box-shadow: 0 0 12px 5px #ffffff80;
+        }
         
         & a{
             display: flex;
@@ -497,8 +501,9 @@
         background-color: #FAEDBC;
         border: none;
         border-radius: 5px;
-        box-shadow: 0 0 12px 5px rgba(0,0,0,0.2);
-        box-shadow: 0 0 12px 5px #faebbc5e;
+        box-shadow: 0 0 3px 0px #faebbc5e;
+        transition: box-shadow .3s;
+
         & a{ 
             display: flex;
             justify-content: center;
@@ -507,6 +512,10 @@
             color: #010101; 
             width: 100%; 
         }
+    }
+
+    &__viewMore:hover{
+        box-shadow: 0 0 12px 5px #faebbc5e;
     }
 }
 
