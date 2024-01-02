@@ -1,5 +1,3 @@
-"use client"
-
 //-------> Camponents
 import { ProjectCard } from "./card"
 

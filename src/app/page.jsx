@@ -1,6 +1,6 @@
 //----> Components
 import { Menu } from '../components/static'
-import { AboutMe, Skills, Projects, Contact , Header, MoreAboutMe } from '../components/section'
+import { AboutMe, Skills, Projects, Contact , Header, MoreAboutMe, Articles } from '../components/section'
 
 export default function Home() {
   return (
@@ -15,6 +15,8 @@ export default function Home() {
         <Projects />
         <hr className='separator' />
         <MoreAboutMe />
+        <hr className='separator' />
+        <Articles />
         <hr className='separator' />
         <Contact />
       </main>

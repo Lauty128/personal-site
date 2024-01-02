@@ -15,6 +15,7 @@
 # production
 /build
 /projects
+/articles
 
 # misc
 .DS_Store

@@ -1,5 +1,3 @@
-'use client'
-
 //----> Assets
 import { FaEye, FaArrowRight } from 'react-icons/fa';
 
