@@ -12,24 +12,14 @@
     outline: none;
     padding: .3em .7em;
 }
-.goBack a{
-    color: black;
-    font-size: 1.2em;
-}
+.goBack a{ color: black; font-size: 1.2em }
 
-.title{
-    font-size: 3.3em;
-    margin-top: .2em;
-}
+.title{ font-size: 3.3em; margin-top: .2em }
 
-.breadCrumbs{
-    font-size: 1.1em;
-}
-.breadCrumbs a:hover{ color: rgb(109, 140, 193); }
+.breadCrumbs{ font-size: 1.1em }
+.breadCrumbs a:hover{ color: rgb(109, 140, 193)  }
 
-.copyright a{
-    color: rgb(86, 126, 195);
-}
+.copyright a{ color: rgb(86, 126, 195) }
 
 
 /*--------------- OPTIONS ---------------------*/
@@ -51,12 +41,8 @@
 .option svg{ margin-right: .5em; vertical-align: text-top }
 
 /*--------------- TECHNOLOGIES ---------------------*/
-.technologiesContainer{
-    margin-top: 2em;
-}
-.technologiesContainer h3{
-    font-size: 1.5em;
-}
+.technologiesContainer{ margin-top: 2em }
+.technologiesContainer h3{ font-size: 1.5em }
 
 .technologies{
     display: flex;
@@ -74,26 +60,17 @@
     background-color: rgb(35, 35, 35);
     box-shadow: -1px 0 2px 5px 8px rgba(0,0,0,0.3);
 }
-.technology span{
-    font-size: 1.1em;
-    color: #767676;
-}
-.technology svg{
-    font-size: 1.1em;
-    color: #FAEDBC;
-}
+.technology span{ font-size: 1.1em; color: #767676 }
+.technology svg{ font-size: 1.1em; color: #FAEDBC }
 
 /*--------------- CONTENT ---------------------*/
-.content{
-    margin-top: 2em;
-}
+.content{ margin-top: 2em }
 .content *{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.content h3{
-    font-size: 1.2em;
-}
+.content h3{ font-size: 1.2em; margin-bottom: 1em; margin-top: .5em; }
+.content h2{ margin-bottom: 1em; margin-top: .5em; }
 
 .content p, 
 .content span, 
