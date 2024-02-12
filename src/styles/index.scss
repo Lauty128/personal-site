@@ -7,6 +7,19 @@
 //---- Utils
 @import './config/components';
 
+
+
+//------------------------------------------------
+//---------------- COMPONENTS --------------------
+//------------------------------------------------
+.Button--viewMore{
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    padding: 13px 20px;
+    border-radius: 8px;
+    transition: border .4s;
+}
+
 //------------------------------------------
 //---------------- MENU --------------------
 //------------------------------------------
@@ -98,51 +111,42 @@
 //------------------------------------------
 //---------------- HEADER ------------------
 //------------------------------------------
-@keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-
 .Header{
     position: relative;
-    display: flex;
-    // justify-content: center;
-    align-items: end;
-    gap: 2em;
+    margin-bottom: 4em;
+    padding-top: 1.3em;
+    scroll-margin-top: 10em;
 
-    &__img{
-        width: 150px;
-        height: 150px;
-        border-radius: 32% 68% 70% 30% / 40% 53% 47% 60% ;
-    }
     // ------------------------- TEXT
-    &__h1{ 
-        width: 0;
+    &__textContainer span{
+        color: $primary-color;
+        font-size: 1.2em;
+        line-height: 200%;
+    }
+    &__h1{
         overflow: hidden;
         white-space: nowrap;
-        border-right: 0.06em solid #a5a5a5;
-        animation: typing 2.8s steps(16) .6s 1 normal both, blink 1s steps(1) infinite;
         margin: 0; 
-        color: #FAEDBC; 
-        font-size: 3em; 
-        line-height: 80%;
+        font-size: 4.5em;
+        letter-spacing: 3px;
     }
-    &__h3{ 
-        margin-bottom: 1em; 
-        color: #E0E0E0; 
-        font-weight: 300;
-        font-size: 1.3em;
+    &__h3{  
+        color: $primary-color;
+        opacity: .6; 
+        font-size: 3em;
+        letter-spacing: 3px;
     }
+    &__separator{
+        display: block;
+        width: 300px;
+        height: 2px;
+        background-color: #545454;
+        margin: 1em 0;
+    }
+
+    &__descriptionContainer p{ max-width: 600px; margin-bottom: 2em }
 }
+
 
 
 //------------------------------------------
@@ -193,22 +197,19 @@
         &__links--active{ margin-top: 0 }
     }
 
-    .Header{
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1em;
-    }
-
 }
 
-@media screen and (max-width:500px) {
-    .Header__h1{ font-size: 2em }
-    .Header__h3{ font-size: 1.1em; margin-top: .5em }
+@media screen and (max-width:650px) {
+    .Header{
+        padding-top: 0;
+        margin-bottom: 5em;
+        &__h1{ font-size: 3em }
+        &__h3{ font-size: 2em }
+    }
 }
 
 @media screen and (max-width:390px) {
-    .Header__h1{ font-size: 1.7em }
+    .Header__h1{ font-size: 2em }
 }
 
 //-----------------------------------------------------------------------------------------------

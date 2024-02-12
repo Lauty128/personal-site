@@ -22,11 +22,11 @@ export function Contact(){
                 <span className="ContactMe__cardTitle">Lauty128</span>
                 <span>Github</span>
             </a>
-            <div className="ContactMe__card">
-                <FaWhatsapp />
-                <span className="ContactMe__cardTitle">+54 2284-552868</span>
-                <span>WhatsApp</span>
-            </div>
+            <a className="ContactMe__card" href="mailto:lautarosilverii@gmail.com">
+                <MdEmail />
+                <span className="ContactMe__cardTitle">lautarosilverii</span>
+                <span>Mail</span>
+            </a>
         </div>
 
         <h3 className="ContactMe__h3">Contactame</h3>
@@ -39,8 +39,8 @@ export function Contact(){
                 Olavarria, Buenos Aires, Argentina
             </span>
             <span>
-                <MdEmail />
-                lautarosilverii@gmail.com
+                <FaWhatsapp />
+                +54 2284-552868
             </span>
         </div>
 
