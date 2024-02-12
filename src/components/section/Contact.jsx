@@ -1,5 +1,5 @@
 //-----> Assets
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaWhatsapp, FaPhoneAlt } from "react-icons/fa"
 import { MdLocationPin, MdEmail } from "react-icons/md"
 
 //-----> Components
@@ -11,6 +11,13 @@ export function Contact(){
     return(
     <section className="ContactMe" id="ContactMe" style={{ scrollMarginTop:'5em' }}>
         
+        <div className='TitleTab'>
+            <h3>
+                <FaPhoneAlt style={{ fontSize:'20px', marginRight:'10px' }} />
+                Contactame
+            </h3>
+        </div>
+
         <div className="ContactMe__cards">
             <a className="ContactMe__card" href="https://www.linkedin.com/in/lautaro-silverii-8a5750209/">
                 <FaLinkedin />
@@ -25,24 +32,24 @@ export function Contact(){
             <a className="ContactMe__card" href="mailto:lautarosilverii@gmail.com">
                 <MdEmail />
                 <span className="ContactMe__cardTitle">lautarosilverii</span>
-                <span>Mail</span>
+                <span>Correo </span>
             </a>
         </div>
 
-        <h3 className="ContactMe__h3">Contactame</h3>
+        <p style={{ fontSize:'1.1em', margin:'2em 0' }}>Tambien puedes llenar el siguiente formulario ↓</p>
 
         <Form />
 
-        <div className="ContactMe__information">
+        {/* <div className="ContactMe__information">
             <span>
                 <MdLocationPin />
-                Olavarria, Buenos Aires, Argentina
+                Olavarria, Buenos Aires
             </span>
             <span>
                 <FaWhatsapp />
                 +54 2284-552868
             </span>
-        </div>
+        </div> */}
 
     </section>
     )

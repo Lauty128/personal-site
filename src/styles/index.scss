@@ -8,16 +8,52 @@
 @import './config/components';
 
 
-
 //------------------------------------------------
 //---------------- COMPONENTS --------------------
 //------------------------------------------------
+
 .Button--viewMore{
     border: 1px solid $primary-color;
     color: $primary-color;
     padding: 13px 20px;
     border-radius: 8px;
     transition: border .4s;
+}
+
+.TitleTab{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 150px;
+    margin-bottom: 20px;
+
+    & h3{
+        position: relative;
+        width: fit-content;
+        font-size: 1.4em;
+        
+        &::after{
+            content: '';
+            width: 350px;
+            height: 1px;
+            background-color: #545454;
+            position: absolute;
+            left: 120% ;
+            top: 50%;
+        }
+
+    }
+}
+
+.ViewAll{
+    margin-top: 1.5em;
+
+        & a{
+            float: right;
+            color: $primary-color-text;
+
+            &:hover{ border-bottom: 1px solid $primary-color-text; }
+        }
 }
 
 //------------------------------------------
@@ -34,7 +70,7 @@
     flex-wrap: wrap;
     color: #E0E0E0;
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     position: fixed;
     z-index: 9;
 
@@ -44,36 +80,41 @@
     }
 
     // --------------- IMG   
-    &__image{ width: 5em }
+    &__image{ width: 4em }
 
     // --------------- LINKS
-    &__links{ display: flex; gap: 2em }
+    &__links{ display: flex; gap: 1em }
     &__h3{ 
         position: relative; 
         overflow: hidden; 
         line-height: 120%;
-        & a{ color:#E0E0E0; text-decoration: none; user-select: none; }
 
-        &--blog{ 
-            margin-left: -.4em; 
-            background-color: #FAEDBC;
-            & a{ color: #545454; padding: .3em .5em; }
+        & a{ 
+            color: $primary-color-text; 
+            text-decoration: none; 
+            font-size: 1.1em;
+            user-select: none; 
+            padding-bottom: 5px; 
         }
     }
     &__h3::after{
         content: "";
         position: absolute;
         width: 115%;
-        height: .1em;
-        background-color: #FAEDBC;
+        height: 1px;
+        background-color: $primary-color-text;
         bottom: 0;
         left: 50%;
+        transform-origin: left;
         transform: translateX(-50%) scaleX(0);
         transition: transform ease-in .2s;
     }
-    &__h3--main a{ color: #FAEDBC }
     &__h3:hover::after{ transform: translateX(-50%)}
+    &__h3--main a{ color: $primary-color; }
 
+    &__separator{
+        color: $primary-color-text;
+    }
     // --------------- BUTTON
     &__button{
         width: 2.5em;
@@ -95,17 +136,9 @@
     
     &__buttonDiv2, &__buttonDiv3{ margin-top: .5em }
     
-    &__button--active &__buttonDiv1{
-        transform: rotate(40deg);
-    }
-    &__button--active &__buttonDiv2{
-        transform: translateX(-2em);
-        opacity: 0;
-    
-    }
-    &__button--active &__buttonDiv3{
-        transform: rotate(-40deg);
-    }
+    &__button--active &__buttonDiv1{ transform: rotate(40deg); }
+    &__button--active &__buttonDiv2{ transform: translateX(-2em); opacity: 0; }
+    &__button--active &__buttonDiv3{ transform: rotate(-40deg); }
 }
 
 //------------------------------------------
@@ -113,9 +146,9 @@
 //------------------------------------------
 .Header{
     position: relative;
-    margin-bottom: 4em;
-    padding-top: 1.3em;
+    padding-top: 8em;
     scroll-margin-top: 10em;
+    min-height: 100vh;
 
     // ------------------------- TEXT
     &__textContainer span{
@@ -157,16 +190,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20%;
-    padding: 1em 1em 0 1em;
-    background-color: rgb(68, 68, 68);
     width: 100%;
+    margin-top: 120px;
+    padding: 0 1em;
 
-    &__h4{ font-size: 1.6em; color: rgb(201, 201, 201); margin-bottom: .5em; }
+    &__content{
+        max-width: 900px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-top:4em;
+        border-top: 1px solid $secundary-color-text;
+    }
+    &__name{ font-size: 1.6em; color: rgb(201, 201, 201); letter-spacing: 1px; }
     
     &__network{
         margin-top: .7em;
-        font-size: 1.3em;
+        font-size: 1.2em;
         color: rgb(138, 138, 138);
         text-align: center;
         padding: .3em .6em;
@@ -174,7 +214,23 @@
     &__network svg{ vertical-align: text-top;  }
     &__network:hover{ color: rgb(201, 201, 201); }
     
-    &__p{ margin: .5em 0; color: rgb(201, 201, 201) }
+    &__p{
+        max-width: 900px;
+        width: 100%;
+        font-size: 1.2em;
+        margin-top: 5px;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+    &__bottom{
+        margin-top: 1em;
+        margin-bottom: 0;
+        padding: 10px; 
+        color: rgb(201, 201, 201); 
+        text-align: center;
+        width: 100vw;
+        background-color: #545454;
+    }
 }
 
 
@@ -189,10 +245,16 @@
             flex-direction: column;
             padding: 1em 0;
         }
+        &__separator{ display: none }
 
-        &__h3--blog{  margin-left: 0;  background-color: transparent; & > a{ color: #FAEDBC; padding: 0 } }
-        &__h3::after{ width: 100%; left: 0; transform-origin: left; transform: scaleX(0); }
-        &__h3:hover::after{ transform: scaleX(1)  }
+        &__h3{
+            margin-top: 5px;
+            & a{ 
+                font-size: 1.3em; 
+                &:hover{ color: $primary-color; }
+            }
+            &:hover::after{ transform: scaleX(0)  }
+        }
         
         &__links--active{ margin-top: 0 }
     }
@@ -201,11 +263,15 @@
 
 @media screen and (max-width:650px) {
     .Header{
-        padding-top: 0;
+        padding-top: 6em;
         margin-bottom: 5em;
         &__h1{ font-size: 3em }
         &__h3{ font-size: 2em }
     }
+
+    .Footer__name{ font-size: 1.2em }
+    .Footer__p{ font-size: 1.1em; margin-top: 10px; }
+
 }
 
 @media screen and (max-width:390px) {
@@ -219,100 +285,59 @@
 //--------------------------------------------
 //---------------- ABOUT ME ------------------
 //--------------------------------------------
-.separator{
-    margin: 3em 0;
-    border-top:none;
-    border-color: #4b4b4b;
-}
-.AboutMe{ 
-    width: 100%; 
-    padding-top: 5em;
-    //margin-bottom: 5em;
-    padding-bottom: 0;
+.AboutMe{
 
-    &__container{
-        gap: 3em;
-    }
-    
-    &__h3{ 
-        width: fit-content;
-        padding-right: 15px;
-        margin-bottom: .6em; 
-        color: #FFFF;
-        border-bottom: 2px solid #ffff; 
-        font-size: 24px; 
-    }
-    &__p { margin: 0; color: #bababa; font-size: 1.1em; }
-    
-    &__button--pk{
-        background-color: #FAEDBC;
+    &__content{ display: flex; align-items: flex-start; gap: 1.5em }
+    &__textContainer{ max-width: 600px }
+    &__content p{
         font-size: 1.1em;
-        padding: .4em;
-        margin-top: 2.2em;
-        color: #3d3d3d;
-
-        & > svg{ vertical-align: bottom; margin-right: .3em; }
     }
-    &__button{
+    &__image{
+        width: 200px;
+        height: 280px;
         position: relative;
-        display: flex;
-        background-color: #E0E0E0;
-        width: fit-content;
-        margin-top: .8em;
-        padding: .5em;
-        overflow: hidden;
-        z-index: 8;
+        flex-shrink: 0;
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid $primary-color;
+            left: 10px;
+            top: 10px;
+            border-radius: 8px;
+            z-index: 1;
+        }
     }
-    .AboutMe__effectButton{   
-        position: absolute;
-        left: -10px;
-        top: 0;
-        width: 4em;
-        height: 3em;
-        background-color: #FAEDBC;
-        transform-origin: left;
-        transform: skewX(40deg);
-        transition: transform linear .3s;
+    &__content img{
+        width: 100%; height: 100%;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 5px 3px 6px 3px rgba(0,0,0,0.2);
+        z-index: 2;
+        filter: grayscale(.9);
+        transition:  filter .5s;
+
+        &:hover{ filter: grayscale(0) }
     }
-    .AboutMe__button:hover .AboutMe__effectButton{ transform: scaleX(4); }
-    .AboutMe__h4{ margin-left: .5em; z-index: 10; color: #3d3d3d; }
-    .AboutMe__button svg{ margin: 0; z-index: 10; color: #3d3d3d; }
-}
-
-// //--------------------------------- @MEDIA 
-// @media screen and (max-width:1050px) {
-//     .Section{ padding: 5em 5% }
-// }
-
-// @media screen and (max-width:950px) {
-//     .AboutMe__textContainer{ max-width: 350px }
-    
-// }
-
-@media screen and (max-width:700px){
-    .AboutMe{
-        padding-top: 2em;
-        margin-bottom: 3em;
-        // &__container{ flex-direction: column; align-items: center; margin-bottom: 3em; padding: 1em;}
-        // &__textContainer{ display: flex; flex-direction: column; align-items: center; max-width: 600px; }
+   
+    @media screen and (max-width:800px){
+        &__textContainer{ max-width: 100%; }
+        &__content{
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
     }
 }
+
 
 
 //--------------------------------------------
 //---------------- SKILLS --------------------
 //--------------------------------------------
 .Skills{
-    
-
-    &__h3{ 
-        width: fit-content;
-        padding-right: 15px;
-        margin-bottom: .6em; 
-        color: #FFFF;
-        border-bottom: 2px solid #ffff; 
-        font-size: 24px; 
-    }
 
     // ICONS AND EFFECTS
     &__container{ 
@@ -327,7 +352,7 @@
         position: relative;
         transition: all linear .2s;
     
-       & svg{ width: 100%; height: 100%; color: #a5a5a5 }
+       & svg{ width: 100%; height: 100%; color: $secundary-color-text }
     }
     &__icon[title]:hover:before {
         position: absolute;
@@ -351,7 +376,7 @@
         &__icon:hover{
             transform: scale(1.15);
             & svg{
-                color: #FAEDBC;
+                color: $primary-color;
             }
         }
         // LOS ICONOS NO HOVER TENDRAN UNA OPACIDAD DE 0.3
@@ -370,6 +395,7 @@
     @media screen and (max-width:500px){
         &__container{
             grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+            padding: 0 25px;
         }
     }
 }
@@ -379,149 +405,65 @@
 //----------------------------------------------
 .Projects{
 
-    &__h3{ 
-        width: fit-content;
-        padding-right: 15px;
-        margin-bottom: .6em; 
-        color: #FFFF;
-        border-bottom: 2px solid #ffff; 
-        font-size: 24px; 
-    }
-
     &__container{
         margin-top: 2em;
-    }
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3em 1em;
 
-    &__viewMore{
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        transition: opacity .2s;
-        width: 100%;
-        box-shadow: 0 0 3px 0px #ffffff80;
-        transition: box-shadow .3s;
-
-        &:hover{
-            box-shadow: 0 0 12px 5px #ffffff80;
+        @media screen and (max-width:900px) {
+            &{ grid-template-columns: repeat(2, 1fr) }
         }
-        
-        & a{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3em;
-            padding: .3em 1.4em;
-            color: #3d3d3d;
-        }
-
-        & svg{
-            font-size: .9em;
-            vertical-align: baseline;
-            margin-right: .3em;
+        @media screen and (max-width:600px) {
+            &{ grid-template-columns: 1fr }
         }
     }
     
-    @media screen and (max-width:750px) {
-        &{ padding:  1em .5em 2em .5em }
-        &__container{ gap: 2em }
-
-        &__viewMore{
-            & a{ font-size: 1.3em }
-            & svg{ font-size: .8em }
-        }
-    }
 }
 
 /*-------------------- Project Card ------------------*/
-.Project{ 
-    gap: .5em; 
-    width: 80%;  
-    border-bottom: .001em solid var(--tertiary-color-text);
-    padding-bottom: 1em;
-    padding-left: 2em;
-    margin-bottom: 2em;
-    position: relative;
+.Project{
+    width: 100%;
+    display: block;
+    &:hover &__image > img{ filter: grayscale(0); }
+    &:hover &__title{ color: $primary-color; }
 
-    &__arrow{
-        color: #FAEDBC;
-        position: absolute;
-        left: 0;
-        top: 1em;
-        font-size: 1.3em;
-    }
+    &__image{
+        width: 100%;
+        height: 220px;
 
-
-    /* ------------------ Text Box */
-    &__title{ color: $primary-color-text; font-size: 1.5em; margin-bottom:0; text-transform: uppercase; }
-    &__p{ color: $secundary-color-text; margin-top: 0;  }
-    
-    &__button{ 
-        margin-right: 1em; 
-        background-color: rgb(226, 226, 226);
-        border: none;
-        box-shadow: 0 1.5px 5px rgba(48, 47, 47, 0.842);
-    
-        & a{ 
-            padding: .5em; 
-            font-size: 1.1em; 
-            display: flex; 
-            align-items: center;
-            gap: .3em; 
-            color: #3d3d3d;
+        & img{ 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            filter: grayscale(1);
+            transition: filter .4s;
         }
-        &--noAvailable{ background-color: rgb(199, 198, 198) }
-        &--noAvailable a{ color: rgb(70, 70, 70) }
-        &:hover{ background-color: rgb(199, 198, 198) }
     }
-   
 
-    /*-------------------------- @Media ------------------------------*/
-    @media screen and (max-width:550px) {
-        &{ width: 100% }
-        &__button a{ font-size: 1em; }
-    }
+    &__title{ padding: 5px 0; transition: color .3s; }
+    &__description{ margin: 0 }
 }
+
 
 //----------------------------------------------
 //---------------- ARTICLES --------------------
 //----------------------------------------------
 .Articles{
     width: 100%;
-
     &__container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1em;
         margin-top: 2em;
-    }
-
-    &__viewMore{
-        width: 100%;
-        margin-top: 3em;
-        padding: 8px;
-        background-color: #FAEDBC;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 0 3px 0px #faebbc5e;
-        transition: box-shadow .3s;
-
-        & a{ 
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-            font-size: 1.3em;
-            color: #010101; 
-            width: 100%; 
-        }
-    }
-
-    &__viewMore:hover{
-        box-shadow: 0 0 12px 5px #faebbc5e;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5em;
     }
 }
 
 
 .Article{
+    border-bottom: 1px solid $secundary-color-text;
+    &:hover &__title{ color: $primary-color }
+
     &__imageContainer{
         width: 100%;
         height: 200px;
@@ -530,14 +472,7 @@
         & img{ width: 100%; height: 100% }
     }
 
-    &__button{
-        margin-top: .5em;
-        background-color: #FAEDBC;
-        border: none;
-        font-size: 1.05em;
-        & a{ color: #010101 }
-        & svg{  vertical-align: text-top; margin-right: 3px }
-    }
+    &__description{ margin-top: 5px }
 }
 
 @media screen and (max-width: 900px) {
@@ -562,12 +497,11 @@
 }
 
 
-
 //----------------------------------------------
 //---------------- CONTACT --------------------
 //----------------------------------------------
 .ContactMe{ 
-    padding-bottom: 3em;
+    margin-top: 5em;
 
     &__h3{ 
         width: fit-content;
@@ -654,7 +588,8 @@
         outline: none;
         font-size: 1.2em;
         padding: .5em;
-        background-color: rgb(109, 109, 109);
+        background-color: rgb(56 56 56);
+        border-radius: 5px;
         color: #fff;
     }
     &__textarea{ resize: none; height: 15em }
@@ -665,6 +600,7 @@
         background-color: #FAEDBC;
         border: none;
         cursor: pointer;
+        border-radius: 5px;
         color: rgb(36, 36, 36);
         font-size: 1.2em;
         box-shadow: 0 2px 5px rgba(0,0,0,0.5);

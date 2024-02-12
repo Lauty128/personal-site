@@ -9,16 +9,11 @@ export default function Home() {
       <main>
         <Header />
         <AboutMe />
-        <hr className='separator' />
         <Skills />
-        <hr className='separator' />
         <Projects />
-        <hr className='separator' />
-        <MoreAboutMe />
-        <hr className='separator' />
-        <Articles />
-        <hr className='separator' />
+        {/* <MoreAboutMe /> */}
         <Contact />
+        <Articles />
       </main>
     </>
   )

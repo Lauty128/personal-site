@@ -6,13 +6,15 @@ import { orderByDate } from '@/src/lib/order';
 import Link from 'next/link';
 import { ArticleCard} from "../"
 
-import { FaArchive } from 'react-icons/fa';
+import style from '../../app/blog/index.module.css';
+
+import { FaArchive, FaRegNewspaper } from 'react-icons/fa';
 
 //-------> Server functions
 async function getArticles(){
     const articles = await getAllFilesFrontMatter('articles');
 
-    return articles.sort(orderByDate).slice(0,3)
+    return articles.sort(orderByDate).slice(0,4)
 }
 
 //------> COMPONENT
@@ -23,18 +25,20 @@ export async function Articles(){
     return(
         <section className="Articles" id="Articles" style={{ scrollMarginTop:'5em' }}>
             
-            <h3 className="Articles__h3">Ultimos articulos</h3>
+            <div className='TitleTab'>
+                <h3>
+                    <FaRegNewspaper style={{ fontSize:'20px', marginRight:'10px' }} />
+                    Ultimos articulos
+                </h3>
+            </div>
 
             <div className="Articles__container">
                 { articles.map((article,index) => <ArticleCard key={`${index}`} article={article} /> )}
             </div>
 
-            <button className='Articles__viewMore'>
-                <Link href={'/blog'}>
-                    <FaArchive />
-                    Blog personal
-                </Link>
-            </button>
+            <div className='ViewAll'>
+                <a href="/blog">VER TODO</a>
+            </div>
 
         </section>
     )

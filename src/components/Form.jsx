@@ -13,7 +13,6 @@ export function Form(){
     const defaultFormValues = {
         name:"",
         email:"",
-        linkedin:"",
         message:""
     }
 
@@ -83,12 +82,6 @@ export function Form(){
                 <label htmlFor="inputName" className="ContactMe__label">Correo Electronico</label>
                 <input type="text" name="email" id="inputName" onChange={changeValue} 
                 value={values.email} className="ContactMe__input" />
-            </div>
-
-            <div className="ContactMe__inputContainer" data-aos="fade-left" data-aos-duration="800" >
-                <label htmlFor="inputName" className="ContactMe__label">Linkedin (opcional)</label>
-                <input type="text" name="linkedin" id="inputName" onChange={changeValue} 
-                value={values.linkedin} className="ContactMe__input" />
             </div>
             
             <div className="ContactMe__inputContainer" data-aos="fade-left" data-aos-duration="800" >

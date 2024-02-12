@@ -58,11 +58,11 @@ export default async function Articles(){
             <Link href={'/'} className={style.goBack}>
                 <FaArrowAltCircleLeft /> Volver a inicio
             </Link>
-            <h1>BLOG PERSONAL</h1>
+            <h1>Blog personal</h1>
             <span className={style.breadCrumbs}>
-                <Link href={'/'}>Inicio</Link>
+                <Link href={'/'}>inicio</Link>
                 {' / '}
-                <Link href={'/articulos'}>Articulos</Link>
+                <Link href={'/articulos'}>articulos</Link>
             </span>
 
             <section className={style.articlesContainer}>

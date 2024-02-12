@@ -6,7 +6,7 @@ import { orderByDate } from '@/src/lib/order';
 import Link from 'next/link';
 import { ProjectList } from "../"
 
-import { FaArchive } from 'react-icons/fa';
+import { MdWork } from "react-icons/md";
 
 //-------> Server functions
 async function getProjects(){
@@ -23,18 +23,20 @@ export async function Projects(){
     return(
         <section className="Projects" id="Projects" style={{ scrollMarginTop:'5em' }}>
             
-            <h3 className="Projects__h3">Proyectos</h3>
+            <div className='TitleTab'>
+                <h3>
+                    <MdWork style={{ fontSize:'20px', marginRight:'10px' }} />
+                    Proyectos & Trabajos
+                </h3>
+            </div>
 
             <div className="Projects__container">
                 { <ProjectList projects={projects} /> }
             </div>
 
-            <button className='Projects__viewMore'>
-                <Link href={'/proyectos'}>
-                    <FaArchive />
-                    Lista de proyectos
-                </Link>
-            </button>
+            <div className='ViewAll'>
+                <a href="/proyectos">VER TODO</a>
+            </div>
 
         </section>
     )

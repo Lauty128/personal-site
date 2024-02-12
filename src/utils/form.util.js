@@ -4,8 +4,7 @@ import emailJs from '@emailjs/browser'
 
 const expRegular = {
     name:/^[a-zA-Z _-]{5,30}$/,
-    email: /^[\w]+@{1}[\w]+\.[a-z]{2,3}$/,
-    linkedin: /^(https?:\/\/)?([a-z]+\.)?linkedin\.com\/in\/[a-z0-9_-]+\/?$/i
+    email: /^[\w]+@{1}[\w]+\.[a-z]{2,3}$/
 }
 
 const validate = (name, value) => {
@@ -16,10 +15,6 @@ const validate = (name, value) => {
 
         case "email":
             return expRegular.email.test(value)
-        break;
-
-        case "linkedin":
-            return (expRegular.linkedin.test(value)) || (value.length == 0)
         break;
 
         case "message":
@@ -37,7 +32,7 @@ export const validateInput =(input, value, style)=>{
 }
 
 export const validateForm = (data) => 
-    (validate("name", data.name) && validate("email", data.email) && validate("message", data.message) && validate("linkedin", data.linkedin) )
+    (validate("name", data.name) && validate("email", data.email) && validate("message", data.message))
     
 
 export const formError = (button, errorFormClass) =>{

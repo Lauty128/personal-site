@@ -20,8 +20,8 @@ export function Menu(){
 
     return (
         <nav className="Menu" id="Menu">
-            {/* <img src={'/logo-mini.png'} alt="logo portafolio" className="Menu__image" /> */}
-            <h1 className="Menu__h1">Lautaro Silverii</h1>
+            <img src={'/logo-light.png'} alt="logo portafolio" className="Menu__image" />
+            {/* <h1 className="Menu__h1">Lautaro Silverii</h1> */}
 
             <div className="Menu__button" onClick={toggleButton}>
                 <span className="Menu__buttonDiv1"></span>
@@ -30,18 +30,22 @@ export function Menu(){
             </div>
     
             <div className="Menu__links">
-                <h3 className="Menu__h3 Menu__h3--main">
-                    <a onClick={toggleButton} href="#Home">INICIO</a>
-                </h3>
-                <h3 className="Menu__h3">
-                    <a onClick={toggleButton} href="#AboutMe">SOBRE MI</a>
-                </h3>
-                <h3 className="Menu__h3">
-                    <a onClick={toggleButton} href="#Projects">PROYECTOS</a>
-                </h3>
-                <h3 className="Menu__h3">
-                    <a onClick={toggleButton} href="#ContactMe">CONTACTAME</a>
-                </h3>
+                <span className="Menu__h3">
+                    <a onClick={toggleButton} href="#AboutMe">Sobre mi</a>
+                </span>
+                <span className="Menu__separator">•</span>
+                <span className="Menu__h3">
+                    <a onClick={toggleButton} href="#Projects">Proyectos</a>
+                </span>
+                <span className="Menu__separator">•</span>
+                <span className="Menu__h3">
+                    <a onClick={toggleButton} href="#ContactMe">Contactame</a>
+                </span>
+                <span className="Menu__separator">•</span>
+                <span className="Menu__h3 Menu__h3--main">
+                    <a onClick={toggleButton} href="/blog">Blog</a>
+                </span>
+                
             </div>
         </nav>
 )}

@@ -14,7 +14,7 @@ h1,h2,h3,h4,h5,h6{
     margin: 0;
     padding: 0;
     font-family: $header-font;
-    color: #c2c2c2;
+    color: $primary-color-text;
 }
 
 p,a,span,label{
@@ -37,7 +37,6 @@ td{ padding: .4em .2em .4em .4em; border: 1px solid rgb(80, 80, 80); }
 main{
     max-width: 900px;
     margin: auto;
-    margin-top: 8em;
     position: relative;
-    padding: .6em;
+    padding: 1em;
 }

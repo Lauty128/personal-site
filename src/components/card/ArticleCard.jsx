@@ -9,25 +9,14 @@ export function ArticleCard({ article }){
     const date = new Date(article.date) 
 
     return(
-        <div className="Article" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-            <div className="Article__textContainer">
-                <div className='Article__imageContainer'>
-                    <img src={article.image} alt="" />
-                </div>
-                <span className="Article__date">
-                    { date.toLocaleDateString('es-AR',{
-                        dateStyle:'long'
-                    }) }
-                </span>
-                <h3 className="Article__title">{article.title}</h3>
-
-                <button className="Article__button">
-                    <Link href={'/blog/'+article.slug} >
-                        <FaEye /> Leer
-                    </Link>
-                </button>
-            
-            </div>
-        </div>
+        <Link className='Article' href={`/blog/${article.slug}`} >
+            <span className='Article__date'>
+                { date.toLocaleDateString('es-AR',{
+                    dateStyle:'long'
+                }) }
+            </span>
+            <h1 className='Article__title'>{ article.title }</h1>
+            <p className='Article__description'>{ article.description }</p>
+        </Link>
     )
 }
