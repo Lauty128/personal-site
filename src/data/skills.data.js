@@ -2,7 +2,7 @@
 import { FaHtml5, FaCss3Alt, FaJsSquare, 
     FaNodeJs, FaReact, FaSass,
     FaFigma, FaGitAlt, FaNpm,
-    FaBuffer, FaBootstrap  } from "react-icons/fa"
+    FaBuffer, FaBootstrap, FaLaravel  } from "react-icons/fa"
 import { SiCanva, SiVisualstudiocode, SiPhp, SiTypescript, SiMysql, SiSequelize, SiMongodb } from "react-icons/si"
 
 
@@ -10,21 +10,26 @@ import { SiCanva, SiVisualstudiocode, SiPhp, SiTypescript, SiMysql, SiSequelize,
 export const technologies = [
     {
         id:0,
+        name:"Laravel",
+        icon: FaLaravel()
+    },
+    {
+        id:1,
         name:"NodeJS",
         icon: FaNodeJs()
     },
     {
-        id:1,
+        id:2,
         name:"ReactJS",
         icon: FaReact()
     },
     {
-        id:2,
+        id:3,
         name:"Sass",
         icon: FaSass()
     },
     {
-        id:3,
+        id:4,
         name:"Bootstrap",
         icon: FaBootstrap()
     }

@@ -178,6 +178,7 @@
     }
 
     &__descriptionContainer p{ max-width: 600px; margin-bottom: 2em }
+    &__descriptionContainer p:first-child{ margin-bottom: 0 }
 }
 
 
@@ -291,6 +292,8 @@
     &__textContainer{ max-width: 600px }
     &__content p{
         font-size: 1.1em;
+
+        & b{ color: $primary-color }
     }
     &__image{
         width: 200px;
