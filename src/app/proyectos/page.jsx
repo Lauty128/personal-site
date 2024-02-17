@@ -32,27 +32,23 @@ export default async function Projects(){
                 </div>
     
                 <div className={style.project__data}>
-                    <span className={style.project__date}>
+                    {/* <span className={style.project__date}>
                         <FaRegClock/>
                         { date.toLocaleDateString('es-AR',{
                             dateStyle:'long'
                         }) }
-                    </span>
+                    </span> */}
                     <h2 className={style.project__h2}>{project.title}</h2>
                     <p className={style.project__description}>{project.description}</p>
                     <div className={style.project__buttons}>
-                        <Link href={'/proyectos/'+project.slug} className={style.project__viewMore}>
+                        <Link href={'/proyectos/'+project.slug} className={style.project__button}>
                             Ver mas
                         </Link>
                         {
                             (project.demo)
                             ? <a href={project.demo} 
-                                className={style.project__viewMore} 
-                                target="__blank"
-                                style={{
-                                    backgroundColor:'#FAEDBC'
-                                }}
-                              >
+                                className={`${style.project__button} ${style['project__button--demo']}`} 
+                                target="__blank" >
                                 <FaDesktop /> Demo
                             </a>
                             : ''
@@ -69,7 +65,7 @@ export default async function Projects(){
             <Link href={'/'} className={style.goBack}>
                 <FaArrowAltCircleLeft /> Volver a inicio
             </Link>
-            <h1>LISTA DE PROYECTOS</h1>
+            <h1>Lista de proyectos</h1>
             <span className={style.breadCrumbs}>
                 <Link href={'/'}>Inicio</Link>
                 {' / '}
