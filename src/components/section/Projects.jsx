@@ -11,8 +11,13 @@ import { MdWork } from "react-icons/md";
 //-------> Server functions
 async function getProjects(){
     const projects = await getAllFilesFrontMatter('projects');
+    
+    const pinnedProjects = [];
+    projects.forEach((project) =>{
+        if(project.pin) pinnedProjects.push(project)
+    })
 
-    return projects.sort(orderByDate).slice(0,3)
+    return pinnedProjects.sort(orderByDate)
 }
 
 //------> COMPONENT
