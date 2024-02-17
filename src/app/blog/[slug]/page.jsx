@@ -34,11 +34,20 @@ export default async function Article({ params }){
           <span className={style.breadCrumbs}>
             <Link href={'/'}>Inicio</Link>
             {' / '}
-            <Link href={'/blog'}>Articulos</Link>
+            <Link href={'/blog'}>Blog</Link>
             {' / '}
             <Link href={'/blog/'+article.frontmatter.slug}>{article.frontmatter.title}</Link>
           </span>
-          <img src={ article.frontmatter.image } alt="" />
+          
+          <div className={style.imageContainer}>
+            <img src={ article.frontmatter.image } alt="" />
+            { (article.frontmatter.image_author) &&
+              <p className={style.imageAuthor}>
+                <a href={article.frontmatter.image_author.url}>{article.frontmatter.image_author.name}</a>
+              </p> 
+            }
+          </div>
+          
           <h1 className={style.title}>{ article.frontmatter.title }</h1>
           <span>{ article.frontmatter.readingTime.text }</span>
 

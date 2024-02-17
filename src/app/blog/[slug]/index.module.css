@@ -1,5 +1,5 @@
 .container{
-    max-width: 980px;
+    max-width: 800px;
     margin: 2em auto 4em auto;
     padding: 0 1em;
     position: relative;
@@ -14,30 +14,16 @@
     margin-bottom: 2em;
     display: block;
 }
-.goBack a{
-    color: black;
-    font-size: 1.2em;
-}
+.goBack a{ color: black; font-size: 1.2em }
 
-.title{
-    font-size: 2.6em;
-    margin-top: .3em;
-}
+.title{ font-size: 2.1em; margin-top: .3em }
 
-.breadCrumbs{
-    font-size: 1.1em;
-}
+.breadCrumbs{ font-size: 1.1em }
 .breadCrumbs a:hover{ color: rgb(109, 140, 193); }
 
-.copyright a{
-    color: rgb(86, 126, 195);
-}
-
-.container > img{
-    width: 100%;
-    max-height: 600px;
-    margin-top: 3em;
-}
+.imageContainer{ width: 100%; margin-top: 2em }
+.imageAuthor{ margin: 5px 0; text-align: right }
+.imageContainer img{ width: 100% }
 
 /*--------------- OPTIONS ---------------------*/
 
@@ -48,7 +34,7 @@
     border-bottom: 1px solid rgb(104, 104, 104);
 }
 .content *{
-    color: rgb(166, 166, 166);
+    color: #949494;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
@@ -62,20 +48,16 @@
 .content h3 strong,
 .content h4 strong,
 .content h5 strong{
-    color: #FAEDBC;
     letter-spacing: 1.5px;
     margin-top: 1.7em;
 }
 
-.content h3{
-    font-size: 1.2em;
-}
+.content h3{ font-size: 1.2em }
 
 .content p, 
 .content span, 
 .content a{
-    font-size: 1.1em;
-    text-align: justify;
+    font-size: 1em;
 }
 
 .content pre{
@@ -92,12 +74,9 @@
     margin: 0 2px;
 }
 
-.content li p{
-    font-size: 1.1em
-}
-
 .content a{
-    color: rgb(71, 126, 184);
+    color: rgb(25, 105, 190);
+    text-decoration: underline;
 }
 .content blockquote{
     margin-left: 5px;
@@ -115,7 +94,7 @@
     border-color: transparent;
 }
 
-.content img{
+.content img, .content picture, .content video, .content iframe{
     max-width: 100%;
 }
 

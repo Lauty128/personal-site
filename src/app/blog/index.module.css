@@ -81,14 +81,12 @@
 }
 
 .pagination__a{
-    background-color: #4a4a4a;
-    font-size: 1em;
+    font-size: 1.2em;
     padding: .5em .7em;
-    border-radius: 20px;
     font-weight: bold;
 }
 
 .pagination__a--active{
-    background-color: #FAEDBC;
-    color: black;
+    color: #FAEDBC;
+    border-bottom: 1px solid #FAEDBC;
 }

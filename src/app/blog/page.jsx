@@ -62,7 +62,7 @@ export default async function Articles(){
             <span className={style.breadCrumbs}>
                 <Link href={'/'}>inicio</Link>
                 {' / '}
-                <Link href={'/articulos'}>articulos</Link>
+                <Link href={'/blog'}>Blog</Link>
             </span>
 
             <section className={style.articlesContainer}>
