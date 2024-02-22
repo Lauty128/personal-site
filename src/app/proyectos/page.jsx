@@ -28,16 +28,10 @@ export default async function Projects(){
         return(
             <div className={style.project} key={index}>
                 <div className={style.project__image}>
-                    <img src={project.images[0]} alt={project.alt[0]} />
+                    <img src={project.images} alt={project.alt[0]} />
                 </div>
     
                 <div className={style.project__data}>
-                    {/* <span className={style.project__date}>
-                        <FaRegClock/>
-                        { date.toLocaleDateString('es-AR',{
-                            dateStyle:'long'
-                        }) }
-                    </span> */}
                     <h2 className={style.project__h2}>{project.title}</h2>
                     <p className={style.project__description}>{project.description}</p>
                     <div className={style.project__buttons}>

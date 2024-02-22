@@ -24,10 +24,6 @@ export default async function Project({ params }){
     const { slug } = params
     const project = await getProject(slug)
     
-    const images = project.frontmatter.images.map((image, index)=>{
-      return { image }
-    })
-    
     return(
       <>
         <div className={style.container}>

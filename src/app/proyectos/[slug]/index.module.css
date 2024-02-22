@@ -117,6 +117,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.content hr{ border-bottom-width: 0px; border-color: #949494; }
 .content h3{ font-size: 1.2em; margin-bottom: 1em; margin-top: .5em; }
 .content h2{ margin-bottom: 1em; margin-top: .5em; }
 
