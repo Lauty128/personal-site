@@ -17,7 +17,7 @@ export function Header(){
                 <p>Joven desarrollador de Argentina que se dedica a la creación de aplicaciones web, destinadas a solucionar un problema determinado o aumentar la productividad de una empresa; Capaz de adaptarse a distintos entornos y tecnologías.</p>
                 <p>Puedes echarle un vistazo a mi curriculum!!</p>
                 {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, commodi. Necessitatibus consequuntur ipsa sint odio nihil architecto expedita reiciendis ducimus? Soluta, possimus eum magnam voluptatibus doloremque modi provident dolorum perferendis officiis odit pariatur nesciunt tempore. Non asperiores sequi ipsum repudiandae nulla recusandae.</p> */}
-                <a href="#" className="Button--viewMore">Ver curriculum</a>
+                <a href="/curriculum.pdf" target="__blank" className="Button--viewMore">Ver curriculum</a>
             </div>
         </header>
 }
