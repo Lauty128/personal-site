@@ -1,5 +1,5 @@
 //----- Assets
-    import { FaLinkedin , FaGithub, FaInstagram, FaFacebook } from "react-icons/fa"
+    import { FaLinkedin , FaGithub, FaInstagram, FaYoutube } from "react-icons/fa"
 
 
 export function Footer(){
@@ -18,8 +18,8 @@ export function Footer(){
                 <a href="https://www.instagram.com/silverii_lautaro03/" className="Footer__network">
                     <FaInstagram />
                 </a>
-                <a href="https://www.facebook.com/lautaro.silverii.5" className="Footer__network">
-                    <FaFacebook />
+                <a href="https://www.youtube.com/channel/UCVxMhUWW3RQP_U8nt8Q8mLQ" className="Footer__network">
+                    <FaYoutube />
                 </a>
             </div>
         </div>
