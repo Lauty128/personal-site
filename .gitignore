@@ -16,6 +16,8 @@
 /build
 /projects
 /articles
+/hidden-projects
+/hidden-articles
 
 # misc
 .DS_Store
