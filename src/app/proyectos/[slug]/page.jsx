@@ -28,7 +28,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     title: project.frontmatter.title,
     description: project.frontmatter.description,
-    // keywords: project.frontmatter.keywords
+    keywords: project.frontmatter.keywords || ""
   };
 }
 
