@@ -89,6 +89,6 @@ export default async function Articles(){
 }
 
 export const metadata = {
-    title: 'Blog personal',
+    title: 'Lautaro Silverii | Blog',
     description: 'Blog personal donde se encuentran todos los articulos escritos con mucha pasion'
 }

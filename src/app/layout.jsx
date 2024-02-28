@@ -11,8 +11,8 @@ import { ToastContainer } from 'react-toastify';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Portfolio',
-  description: 'Personal portfolio of Lautaro Silverii'
+  title: 'Lautaro Silverii',
+  description: '🔍 Portfolio donde se encuentra toda la información con respecto a mi trayectoria como programador y donde muestro mis habilidades como tal.  😁'
 }
 
 export default function RootLayout({ children }) {

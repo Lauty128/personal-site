@@ -80,7 +80,10 @@ export async function generateMetadata({ params }) {
   const article = await getArticle(slug);
 
   return {
-    title: article.frontmatter.title,
+    title: {
+      default: article.frontmatter.title,
+      template: "%s"
+    },
     description: article.frontmatter.description
   }
 }

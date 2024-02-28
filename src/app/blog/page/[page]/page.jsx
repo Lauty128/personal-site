@@ -105,6 +105,6 @@ export async function generateStaticParams(){
 }
 
 export const metadata = {
-    title: 'Blog personal',
+    title: 'Lautaro Silverii | Blog',
     description: 'Blog personal donde se encuentran todos los articulos escritos con mucha pasion'
 }

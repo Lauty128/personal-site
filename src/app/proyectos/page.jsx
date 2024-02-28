@@ -17,6 +17,10 @@ async function getProjects(){
     return projects.sort(orderByDate)
 }
 
+export const metadata = {
+    title: 'Lautaro Silverii | Proyectos'
+}
+
 export default async function Projects(){
 
     const projects = await getProjects();

@@ -20,6 +20,18 @@ async function getProject(slug){
   return project
 }
 
+export async function generateMetadata({ params }, parent) {
+  const slug = params.slug;
+  
+  const project = await getProject(slug)
+
+  return {
+    title: project.frontmatter.title,
+    description: project.frontmatter.description,
+    // keywords: project.frontmatter.keywords
+  };
+}
+
 export default async function Project({ params }){
     const { slug } = params
     const project = await getProject(slug)
