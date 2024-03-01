@@ -1,10 +1,11 @@
 //-------------- Icons
 import { FaHtml5, FaCss3Alt, FaJsSquare, 
     FaNodeJs, FaReact, FaSass, FaNpm,
-    FaBuffer, FaBootstrap, FaGitAlt } from "react-icons/fa"
+    FaBuffer, FaBootstrap, FaGitAlt, 
+    FaLaravel} from "react-icons/fa"
 import { SiTypescript, SiJson, SiMysql, SiMarkdown, SiPhp, 
     SiGatsby, SiCanva, SiVisualstudiocode, SiMongodb, SiFigma, 
-    SiSequelize, SiApache, SiDocusaurus } from "react-icons/si"
+    SiSequelize, SiApache, SiDocusaurus, SiTailwindcss } from "react-icons/si"
 import { TbBrandNextjs } from "react-icons/tb"
 import { HiTemplate } from "react-icons/hi"
 
@@ -56,6 +57,14 @@ const Technologies = {
     bootstrap:{
         name:"Bootstrap",
         icon: FaBootstrap()
+    },
+    laravel:{
+        name: 'Laravel',
+        icon: FaLaravel()
+    },
+    tailwind:{
+        name:"TailwindCSS",
+        icon: SiTailwindcss()
     },
     mysql:{
         name:"MYSQL",
