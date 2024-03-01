@@ -11,10 +11,14 @@ import Link from "next/link"
 
 
 //-------> Server functions
-async function getProjects(){
-    const projects = await getAllFilesFrontMatter('projects');
-
-    return projects.sort(orderByDate)
+async function getProjects(pinned = false){
+    const data = await getAllFilesFrontMatter('projects');
+    const Projects = [];
+    data.forEach((project) =>{
+        // Get projects that not are pinned
+        if(project.pin == pinned) Projects.push(project)
+    })
+    return Projects.sort(orderByDate);
 }
 
 export const metadata = {
@@ -24,6 +28,7 @@ export const metadata = {
 export default async function Projects(){
 
     const projects = await getProjects();
+    const pinnedProjects = await getProjects(true);
 
 
     function projectCard(project, index){
@@ -70,6 +75,18 @@ export default async function Projects(){
                 <Link href={'/proyectos'}>Proyectos</Link>
             </span>
 
+            <h3 className={style.SubTitle} style={{ marginTop:"3em" }}>
+                Proyectos principales
+            </h3>
+            <section className={style.projectsContainer}>
+                {
+                    pinnedProjects.map((project,index)=>{
+                        return projectCard(project, index)
+                    })  
+                }
+            </section>
+
+            <h3 className={style.SubTitle}>Otros proyectos</h3>
             <section className={style.projectsContainer}>
                 {
                     projects.map((project,index)=>{

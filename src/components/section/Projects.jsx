@@ -10,14 +10,15 @@ import { MdWork } from "react-icons/md";
 
 //-------> Server functions
 async function getProjects(){
-    const projects = await getAllFilesFrontMatter('projects');
-    
+    const projects = (await getAllFilesFrontMatter('projects')).sort(orderByDate);
+
     const pinnedProjects = [];
     projects.forEach((project) =>{
-        if(project.pin) pinnedProjects.push(project)
+        // Get the first 3 pinned projects
+        if(project.pin && pinnedProjects.length < 3) pinnedProjects.push(project)
     })
 
-    return pinnedProjects.sort(orderByDate)
+    return pinnedProjects;
 }
 
 //------> COMPONENT
@@ -40,7 +41,7 @@ export async function Projects(){
             </div>
 
             <div className='ViewAll'>
-                <a href="/proyectos">VER TODO</a>
+                <Link href={"/proyectos"}>VER TODO</Link>
             </div>
 
         </section>

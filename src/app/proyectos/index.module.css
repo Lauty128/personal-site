@@ -26,11 +26,39 @@
     color: rgb(109, 140, 193);
 }
 
+.SubTitle{
+    margin-bottom: 2em;
+    position: relative;
+}
+
+@media screen and (min-width:480px){
+    .SubTitle{ padding-left: 6em }
+    
+    .SubTitle::after{
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 5em;
+        height: 2px;
+        background-color: #5c5c5c;
+    }
+    
+    .SubTitle::before{
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 5em;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #5c5c5c;
+    }
+}
 
 /* ************ PROJECTS ************** */
 .projectsContainer{
-    margin-top: 3em;
-    margin-bottom: 2em;
+    margin-bottom: 6em;
 }
 
 .project{
