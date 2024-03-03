@@ -8,7 +8,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 
 //-----> Components
 // import { Carousel } from '@/src/components'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
 //-----> Components
 import Technologies from '@/src/data/technologies.data'
@@ -42,7 +43,7 @@ export default async function Project({ params }){
 
           <div className={style.HeaderImage}>
             <a href="/">
-              <img src="/logo-light.png" alt="logo lautaro silverii" />
+              <Image width={60} height={60} src="/logo-light.png" alt="logo lautaro silverii" />
             </a>
           </div>
           <div className={style.Header}>
@@ -71,8 +72,8 @@ export default async function Project({ params }){
 
                 {
                   (project.frontmatter.links) &&
-                  project.frontmatter.links.map(link=>( 
-                    <a href={link.url} className={style.url}>
+                  project.frontmatter.links.map((link, index)=>( 
+                    <a href={link.url} key={index} className={style.url}>
                       <FaExternalLinkAlt />
                       {link.name || link.url}
                     </a>

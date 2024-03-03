@@ -1,5 +1,9 @@
 'use client'
 
+//----> Components
+import Image from 'next/image';
+
+
 export function Menu(){
     
     //-------------------- Menu Button
@@ -20,7 +24,7 @@ export function Menu(){
 
     return (
         <nav className="Menu" id="Menu">
-            <img src={'/logo-light.png'} alt="logo portafolio" className="Menu__image" />
+            <Image width={60} height={60} src={'/logo-light.png'} alt="logo portafolio" className="Menu__image" />
             {/* <h1 className="Menu__h1">Lautaro Silverii</h1> */}
 
             <div className="Menu__button" onClick={toggleButton}>

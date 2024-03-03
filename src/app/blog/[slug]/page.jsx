@@ -7,6 +7,7 @@ import { getAllFilesFrontMatter, getFileBySlug } from '@/src/lib/mdx'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 //-----> Components
+import Image from 'next/image';
 import Link from 'next/link'
 
 
@@ -40,7 +41,7 @@ export default async function Article({ params }){
           </span>
           
           <div className={style.imageContainer}>
-            <img src={ article.frontmatter.image } alt="" />
+            <Image width={120} height={80} src={ article.frontmatter.image } alt="" />
             { (article.frontmatter.image_author) &&
               <p className={style.imageAuthor}>
                 <a href={article.frontmatter.image_author.url}>{article.frontmatter.image_author.name}</a>

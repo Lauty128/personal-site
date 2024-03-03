@@ -7,6 +7,7 @@ import { getAllFilesFrontMatter } from "@/src/lib/mdx";
 import { orderByDate } from "@/src/lib/order";
 
 //----> Components
+import Image from 'next/image';
 import Link from "next/link"
 
 
@@ -37,7 +38,7 @@ export default async function Projects(){
         return(
             <div className={style.project} key={index}>
                 <div className={style.project__image}>
-                    <img src={project.images} alt={project.alt[0]} />
+                    <Image width={60} height={60} src={project.images} alt={project.alt[0]} />
                 </div>
     
                 <div className={style.project__data}>

@@ -23,7 +23,7 @@
 
 .imageContainer{ width: 100%; margin-top: 2em }
 .imageAuthor{ margin: 5px 0; text-align: right }
-.imageContainer img{ width: 100% }
+.imageContainer img{ width: 100%; height: auto; }
 
 /*--------------- OPTIONS ---------------------*/
 

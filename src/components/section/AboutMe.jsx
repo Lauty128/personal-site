@@ -1,6 +1,10 @@
 //----- Assets
 import { FaUser } from 'react-icons/fa';
 
+//----> Components
+import Image from 'next/image';
+
+
 export function AboutMe(){
 
     return (
@@ -22,7 +26,7 @@ export function AboutMe(){
                 <p>Últimamente estoy trabajando mucho con <b>Laravel</b>, en su versión 10, y cada vez más me desenvuelvo mejor con esta tecnología.</p>
             </div>
             <div className='AboutMe__image'>
-                <img src="/profile.jpg" alt="" />
+                <Image width={200} height={150} src="/profile.jpg" alt="" />
             </div>
         </div>
                 
