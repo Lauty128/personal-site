@@ -57,6 +57,15 @@ export default async function Projects(){
                             </a>
                             : ''
                         }
+                        {
+                            (project.page)
+                            ? <a href={project.page} 
+                                className={`${style.project__button} ${style['project__button--demo']}`} 
+                                target="__blank" >
+                                <FaDesktop /> Página
+                            </a>
+                            : ''
+                        }
                     </div>
                 </div>
             </div>

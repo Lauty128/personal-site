@@ -70,6 +70,13 @@ export default async function Project({ params }){
                   </a>
                 }
 
+                { project.frontmatter.page && 
+                  <a href={project.frontmatter.page} className={style.url}>
+                    <FaExternalLinkAlt />
+                    Página
+                  </a>
+                }
+
                 {
                   (project.frontmatter.links) &&
                   project.frontmatter.links.map((link, index)=>( 
