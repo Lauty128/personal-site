@@ -29,7 +29,18 @@ export async function generateMetadata({ params }, parent) {
   return {
     title: project.frontmatter.title,
     description: project.frontmatter.description,
-    keywords: project.frontmatter.keywords || ""
+    keywords: project.frontmatter.keywords || "",
+    openGraph: {
+      title: project.frontmatter.title,
+      description: project.frontmatter.description,
+      images:[
+        {
+          url: project.frontmatter.images,
+          width: 500,
+          height: 400,
+        },
+      ]
+    }
   };
 }
 

@@ -23,7 +23,12 @@ async function getProjects(pinned = false){
 }
 
 export const metadata = {
-    title: 'Lautaro Silverii | Proyectos'
+    title: 'Lautaro Silverii | Proyectos',
+    openGraph: {
+        title: 'Lautaro Silverii | Proyectos',
+        url: 'https://lautarosilverii.site/proyectos',
+        siteName: 'Lautaro Silverii | Proyectos',
+    }
 }
 
 export default async function Projects(){

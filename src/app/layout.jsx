@@ -12,7 +12,22 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Lautaro Silverii',
-  description: '🔍 Portfolio donde se encuentra toda la información con respecto a mi trayectoria como programador y donde muestro mis habilidades como tal.  😁'
+  description: '🔍 Portfolio donde se encuentra toda la información con respecto a mi trayectoria como programador y donde muestro mis habilidades como tal.  😁',
+  openGraph: {
+    title: 'Lautaro Silverii',
+    description: '🔍 Portfolio donde se encuentra toda la información con respecto a mi trayectoria como programador y donde muestro mis habilidades como tal.  😁',
+    url: 'https://lautarosilverii.site',
+    siteName: 'Lautaro Silverii | Portfolio',
+    images:[
+      {
+        url: 'https://lautarosilverii.site/logo-light.png',
+        width: 400,
+        height: 400,
+      },
+    ],    
+    locale: 'es_AR',
+    type: 'website',
+  }
 }
 
 export default function RootLayout({ children }) {

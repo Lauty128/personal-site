@@ -80,7 +80,7 @@
     }
 
     // --------------- IMG   
-    // &__image{ width: 4em }
+    &__image{ width: 4em }
 
     // --------------- LINKS
     &__links{ display: flex; gap: 1em }
@@ -476,27 +476,6 @@
     }
 
     &__description{ margin-top: 5px }
-}
-
-@media screen and (max-width: 900px) {
-    .Article{ &__imageContainer{ max-height: 250px } }
-    .Articles{
-        &__container{
-            grid-template-columns: 1fr 1fr;
-            gap: 2em;
-        }
-    
-        &__viewMore{
-            width: 100%;
-            margin-top: 3em;
-            padding: 8px;
-        }
-    }
-}
-
-@media screen and (max-width: 550px){
-    .Article{ &__imageContainer{ height: 300px } }
-    .Articles{ &__container{ grid-template-columns: 1fr } }
 }
 
 

@@ -106,5 +106,11 @@ export async function generateStaticParams(){
 
 export const metadata = {
     title: 'Lautaro Silverii | Blog',
-    description: 'Blog personal donde se encuentran todos los articulos escritos con mucha pasion'
+    description: 'Blog personal donde se encuentran todos los articulos escritos con mucha pasion',
+    openGraph: {
+        title: 'Lautaro Silverii | Blog',
+        description: 'Blog personal donde se encuentran todos los articulos escritos con mucha pasion',
+        url: 'https://lautarosilverii.site/blog',
+        siteName: 'Lautaro Silverii | Blog',
+    }
 }

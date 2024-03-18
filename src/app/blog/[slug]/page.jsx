@@ -83,6 +83,17 @@ export async function generateMetadata({ params }) {
   return {
     title: article.frontmatter.title,
     description: article.frontmatter.description,
-    keywords: article.frontmatter.keywords || ""
+    keywords: article.frontmatter.keywords || "",
+    openGraph: {
+      title: article.frontmatter.title,
+      description: article.frontmatter.description,
+      images:[
+        {
+          url: article.frontmatter.image,
+          width: 600,
+          height: 400,
+        },
+      ]
+    }
   }
 }
