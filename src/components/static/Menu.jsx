@@ -24,7 +24,7 @@ export function Menu(){
 
     return (
         <nav className="Menu" id="Menu">
-            <Image width={60} height={60} src={'/logo-light.png'} alt="logo portafolio" className="Menu__image" />
+            <Image width={400} height={400} src={'/logo-light.png'} alt="logo portafolio" className="Menu__image" />
             {/* <h1 className="Menu__h1">Lautaro Silverii</h1> */}
 
             <div className="Menu__button" onClick={toggleButton}>

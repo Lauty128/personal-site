@@ -54,7 +54,7 @@ export default async function Project({ params }){
 
           <div className={style.HeaderImage}>
             <a href="/">
-              <Image width={60} height={60} src="/logo-light.png" alt="logo lautaro silverii" />
+              <Image width={70} height={70} src="/logo-light.png" alt="logo lautaro silverii" />
             </a>
           </div>
           <div className={style.Header}>

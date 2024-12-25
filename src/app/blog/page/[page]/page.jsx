@@ -17,9 +17,9 @@ async function getArticles(page){
     const limit = 6;
     const offset = ((page * limit) - limit);
 
-    const articles = data.slice(offset, offset + limit);
+    const articles = data.sort(orderByDate);
     return {
-        articles: articles.sort(orderByDate),
+        articles: articles.slice(offset, offset + limit),
         pages: Math.ceil(data.length / limit)
     }
 }

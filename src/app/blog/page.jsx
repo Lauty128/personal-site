@@ -13,9 +13,9 @@ import Link from "next/link"
 //-------> Server functions
 async function getArticles(){
     const data = await getAllFilesFrontMatter('articles');
-    const articles = data.slice(0, 6);
+    const articles = data.sort(orderByDate);
     return {
-       articles: articles.sort(orderByDate),
+       articles: articles.slice(0, 6),
        pages: Math.ceil(data.length / 6)
     }
 }
