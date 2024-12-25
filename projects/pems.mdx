@@ -1,0 +1,88 @@
+---
+title: "PEM System"
+images: "https://res.cloudinary.com/dyrpgj8od/image/upload/v1734273566/PEMS_1_rpuht8.png"
+alt: ["logo pems"]
+date: "2023-10-08"
+# demo: ""
+code: null
+#page: ""
+pin: true
+video: "https://www.youtube.com/watch?v=N0bvFDPFpL4"
+description: "✨ Sistema que se encarga de administrar equipos medicos en Argentina y los filtra dependiendo el proveedor que los comercializa. Proyecto desarrollado para UNICEN (Pasantia) ⚕️🔍"
+Technologies: ["laravel","mysql","css","js","json","figma"]
+keywords: "ProveeMed proveemed sistema administrador dashboard medicos equipos equipos medicos proveedores argentina unicen fio olavarria integral php"
+---
+
+Este proyecto se desarrolló para la facultad de ingeniería **UNICEN** de Olavarria (FIO)
+
+ProveeMed es una aplicación integral diseñada para gestionar proveedores de equipos médicos, dividida en dos componentes esenciales: una API desarrollada en PHP 8.1, utilizando algunos paquetes para facilitar el desarrollo con composer, y una interfaz construida con ReactJS en Vite. Esta solución proporciona herramientas efectivas tanto para la búsqueda y visualización de proveedores como para la exploración de equipos médicos asociados.
+
+## API
+
+Se optó por utilizar un sistema de API's con el fin de obtener más agilidad y así, en un futuro, poder adaptarlo a otros sistemas.
+
+La base sobre la cual se desarrolla este proyecto es:
+   * Tener un sistema que mantenga toda la información, la cual ya se encontraba en un archivo xlsx
+   * Darle forma a ese sistema, para que pueda ser utilizado por cualquier persona y se pueda obtener la información que se desea en pocos clics
+   * Poder actualizar esa información a través de un archivo xlsx
+   * Sistema de backups para poder regresar a un estado anterior sin perder la información
+
+
+La versión de la API que fue finalizada y puesta a prueba permite realizar varias peticiones. Ahora voy a mostrar las funcionalidades del sistema
+
+* **Equipos médicos**
+   * Obtener listado de equipos médicos (Junto a filtros de categoría o nombre)
+   * Obtener listado de los equipos médicos que vende un proveedor
+   * información completa sobre un equipo médico
+   * Descargar archivo sobre las especificaciones de un equipo médico
+* **Proveedores**
+   * Obtener listado de proveedores (Junto a filtros de categoría o nombre)
+   * información completa sobre un proveedor
+   * Obtener listado de proveedores venden un equipo médico en específico (dentro de su inventario)
+* **Categorías**
+   * Obtener listado de las categorías
+   * Obtener un listado de las categorías que comercializa un proveedor
+* **Backups**
+   * Listado de los backups que se encuentran en el sistema y cuál está activo
+   * Descargar un template en formato xlsx, con los datos actuales en el sistema, para poder actualizar la base de datos
+   * Descargar un template en formato xlsx de una fecha indicada, para visualizar los datos de ese momento sin tener que volver a ese backup
+   * (POST) Subir un archivo xlsx para actualizar el backup actual y definirlo con actual
+   * (DELETE) Descargar el backup de una fecha indicada
+   * Actualizar la base de datos con un backup indicado que se encuentra en el sistema almacenado en formato de archivo
+
+
+**Tecnologías Utilizadas en la API:**
+   - **[PHP 8.1](https://www.php.net/ChangeLog-8.php#8.1.27)**: Lenguaje principal para la lógica del servidor.
+   - **[FlightPHP](https://flightphp.com/)**: Framework utilizado para manejar el sistema de enrutamiento de la API.
+   - **[MySQL](https://www.mysql.com/downloads/)**: Base de datos.
+   - **[PDO](https://www.php.net/manual/en/class.pdo)**: Para establecer la conexion entre el sistema y la base de datos.
+   - **[PhpSpreadSheet](https://phpspreadsheet.readthedocs.io/en/latest/)**: Paquete que permite la creación y lectura de archivos XLSX
+
+
+## Interfaz en ReactJS (Vite)
+
+La interfaz, desarrollada en ReactJS con Vite, proporciona una experiencia de usuario intuitiva y eficiente:
+
+1. **Consumo de la API:**
+   - La interfaz utiliza la API para realizar consultas y obtener información actualizada de proveedores y equipos médicos.
+
+2. **Enrutamiento Dinámico:**
+   - Se utiliza react-router-dom para manejar el enrutamiento, permitiendo una navegación fluida entre diferentes secciones de la aplicación.
+
+3. **Manejo del Estado Global:**
+   - Zustand se emplea para gestionar el estado global de la aplicación, asegurando una coherencia y accesibilidad eficientes.
+
+4. **Iconografía Mejorada:**
+   - react-icons se incorpora para incluir iconos, mejorando la estética y facilitando la comprensión visual de la interfaz.
+
+## Notas Adicionales
+
+- La combinación de PHP en el backend y ReactJS en el frontend ofrece una arquitectura flexible y moderna.
+
+- El uso de tecnologías como Vite y Zustand en la interfaz garantiza un rendimiento óptimo y una experiencia de usuario receptiva.
+
+- Este proyecto fue desarrollado como sistema base que en un futuro se busca expandir y agregar nuevas funcionalidades, como lo son cambiar el sistema de actualización mediante un archivo xlsx por un sistema de dashboard que permite realizar todas estas actualizaciones de una forma más óptima y más centralizada
+
+## Videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KQdtiSw_ag0?si=qfSs47s-q6xkkOjb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -1,0 +1,61 @@
+---
+title: "Monza Automotor"
+images: "https://res.cloudinary.com/dyrpgj8od/image/upload/v1691785564/Portfolio/logoMonza_kprlij.jpg"
+alt: ["logo of monza","interface of monza"]
+date: "2023-06-20"
+# demo: ""
+# code: ""
+# page: ""
+# video: ""
+pin: false
+description: '🚗 Sistema para administrar los vehiculos de un concesionario de coches usados. Sistema sencillo, agradable a la vista y facil de utilizar. 🛠️💼'
+Technologies: ["react","nodejs","json","sass","ts","figma"]
+---
+
+Aplicación para administrar el listado de vehículos de varias concesionaria, con la finalidad de facilitar la gestión de todos estos datos, mejorando la velocidad y eficiencia. Este proyecto se divide en dos partes:
+
+## **La API para la Gestión de Vehículos Usados:**
+
+Para construir la parte fundamental de nuestra aplicación, optamos por utilizar Node.js y Express.js, dos tecnologías ampliamente reconocidas por su capacidad para construir APIs escalables y de alto rendimiento. Esto nos permitió crear una API que cumple con los estándares más exigentes en términos de velocidad y eficiencia.
+
+La API cuenta con una serie de endpoints diseñados para ofrecer una funcionalidad completa en la gestión de vehículos usados:
+
+1. **GET:** Ofrecemos la capacidad de recuperar información detallada de los vehículos disponibles en el concesionario. Esto incluye detalles como marca, modelo, año, precio y más.
+2. **POST:** Permitimos la adición de nuevos vehículos al inventario del concesionario. Los usuarios pueden ingresar información detallada sobre los vehículos, incluyendo imágenes y datos técnicos.
+3. **PUT:** Facilitamos la actualización de información de vehículos existentes en la base de datos, lo que permite reflejar cambios en el estado de los vehículos de manera efectiva.
+4. **DELETE:** Brindamos la capacidad de eliminar registros de vehículos que ya no están disponibles en el concesionario.
+
+### **Conexión a la Base de Datos MySQL con Sequelize:**
+
+Para gestionar los datos de manera eficiente, implementamos Sequelize, un poderoso ORM (Mapeador Objeto-Relacional) de JavaScript, que simplifica la interacción con la base de datos MySQL. Esto me permitió realizar consultas de base de datos de manera sencilla y mantener una estructura de datos consistente y segura.
+
+### **Generación de Catálogo para Facebook Business:**
+
+Uno de los aspectos más innovadores de este proyecto es la capacidad de generar un catálogo de vehículos para su uso en la tienda de una página de Facebook Business. Desarrolle una funcionalidad que exporta los datos actuales de la base de datos en un formato específico(xlsx) que cumple con los requisitos de Facebook. Esto simplifica en gran medida la tarea de promocionar los vehículos en la plataforma de redes sociales y maximiza la exposición del inventario del concesionario.
+
+En resumen, este proyecto ha resultado en una herramienta valiosa para la gestión de un concesionario de vehículos usados. La API robusta y la conexión eficiente a la base de datos, combinadas con la capacidad de generar catálogos de Facebook Business, han mejorado significativamente la eficiencia y la visibilidad de los vehículos en venta. Esta solución tecnológica demuestra cómo la innovación en la gestión de concesionarios puede ser un factor clave para el éxito en la industria automotriz.
+
+## Cliente
+
+El siguiente paso clave en la evolución de nuestro proyecto fue la conversión de nuestro cliente web React y Typescript en una aplicación de escritorio. Para lograrlo, optamos por Tauri, una herramienta que facilita la creación de aplicaciones de escritorio utilizando tecnologías web. Aprovechamos las ventajas de React, Typescript, react-router-dom y Zustand para garantizar una experiencia de usuario coherente y eficiente.
+
+**Tecnologías Clave Utilizadas:**
+
+1. **React y Typescript:** Nuestro cliente web estaba basado en React y Typescript, lo que nos proporcionó una base sólida para crear una interfaz de usuario dinámica y bien estructurada.
+2. **ViteJS:** Utilizamos ViteJS como nuestro entorno de desarrollo, ya que es conocido por su velocidad y eficiencia en la construcción de aplicaciones web modernas.
+3. **react-router-dom:** Gestionamos el enrutamiento de la aplicación web utilizando react-router-dom, lo que nos permitió crear una navegación fluida entre las diferentes vistas de la aplicación.
+4. **Zustand:** Zustand nos ayudó a gestionar el estado de la aplicación de manera eficiente y a compartir datos entre componentes de manera sencilla, lo que facilitó el desarrollo de la aplicación.
+5. **Tauri:** Para convertir nuestro cliente web en una aplicación de escritorio, adoptamos Tauri. Esta tecnología nos permitió encapsular nuestra aplicación web en un ejecutable de escritorio con relativa facilidad, incluso con conocimientos limitados en Rust, ya que Tauri proporciona un conjunto de herramientas y documentación amigable.
+
+**Proceso de Adaptación a Aplicación de Escritorio:**
+
+El proceso de adaptación a una aplicación de escritorio con Tauri fue sorprendentemente sencillo:
+
+1. **Configuración de Tauri:** Comenzamos por configurar Tauri y ajustar las opciones según nuestras necesidades específicas, como el nombre de la aplicación, el icono y otras preferencias de la interfaz de usuario.
+2. **Integración de la Aplicación Web:** Luego, incorporamos nuestra aplicación React existente en la estructura de directorios de Tauri, asegurándonos de que todas las dependencias y rutas estuvieran correctamente definidas.
+3. **Personalización de la Interfaz de Usuario:** Utilizamos las capacidades de estilo y personalización de Tauri para adaptar la interfaz de usuario a un entorno de aplicación de escritorio. Esto incluyó ajustar el diseño, el tamaño de la ventana y la apariencia general.
+4. **Empaquetamiento de la Aplicación:** Finalmente, Tauri nos permitió compilar nuestra aplicación en ejecutables de escritorio para varios sistemas operativos, como Windows, macOS y Linux. Esto facilitó la distribución de la aplicación en diferentes plataformas.
+
+### Videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hBK64rO1KHM?si=2QkDGsL9Tco7h_-d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

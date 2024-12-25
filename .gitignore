@@ -14,8 +14,6 @@
 
 # production
 /build
-/projects
-/articles
 /hidden-projects
 /hidden-articles
 

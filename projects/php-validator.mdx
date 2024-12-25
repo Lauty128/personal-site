@@ -1,0 +1,27 @@
+---
+title: "PHP Validator"
+images: "https://res.cloudinary.com/dyrpgj8od/image/upload/v1711919927/Portfolio/Validator_nekgjb.png"
+alt: ["php validator", "validaciones", "dependencia", "clase", "pequeña"]
+date: "2023-10-13"
+pin: false
+code: 'https://github.com/Lauty128/php-validator'
+description: 'Pequeña dependencia que permite realizar validaciones en nuestros archivos php de una forma facil. El codigo es una simple clase que centraliza los distintos tipos de validaciones y permite procesar todas las entradas juntos o de forma individual'
+Technologies: ["php"]
+---
+
+Esta es una herramienta enfocada a la validación de datos en aplicaciones web y servicios. Esta dependencia se basa en una única clase centralizada que concentra todas las propiedades y métodos necesarios para realizar diversos tipos de validaciones de datos. Desde la verificación de formularios hasta la validación de datos en bruto, esta clase proporciona una solución integral para garantizar la integridad y la seguridad de los datos en cualquier entorno PHP.
+
+### Características Principales:
+
+* **Centralización de Validaciones:** Esta dependencia ofrece una única clase que centraliza todas las operaciones de validación. Esto simplifica el proceso de gestión y mantenimiento del código relacionado con la validación, proporcionando un punto de acceso claro y coherente para todas las funciones de validación.
+
+* **Tipos de Validaciones:** La clase de esta dependencia ofrece soporte para tres tipos principales de validaciones:
+
+    * **Expresión regular:** Una expresión regular se encargará de procesar el valor del campo y validar si el mismo pasa la validación o no.
+    * **Texto:** Se ingresa un valor máximo y un valor mínimo para asegurar que el texto se encuentre dentro de los parámetros indicado de longitud.
+    * **Opciones:** Se ingresa un arreglo de strings y luego se válida si el valor del campo coincide con algún elemento del arreglo indicado.
+
+* **Pruebas Unitarias y Colectivas:** La dependencia facilita la realización de pruebas tanto unitarias como colectivas para garantizar la fiabilidad y la robustez de las operaciones de validación. Esto permite a los desarrolladores realizar pruebas exhaustivas de sus funciones de validación, detectar posibles errores y garantizar un comportamiento coherente en diferentes escenarios.
+
+* **Valores por defecto:** Se permite el ingreso de campos por defecto, como puede ser el nombre o el mail, para evitar la repetición de la validación de un campo en caso de tener varios formularios.   
+También se puede ingresar un valor por defecto a las longitudes máximas y mínimas, ya que estos valores no son obligatorios en la definición de las validaciones de tipo texto.
