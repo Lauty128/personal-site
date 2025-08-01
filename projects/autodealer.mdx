@@ -4,69 +4,43 @@ images: "https://res.cloudinary.com/dyrpgj8od/image/upload/v1728741819/Portfolio
 alt: ["autodealer","logo","dashboard","auto","vehiculo"]
 date: "2023-11-16"
 pin: true
-# video: "https://www.youtube.com/watch?v=zs0oMlC37_o"
+page: "https://autodealer.com.ar/"
 description: '💻 SaaS enfocado a la administración de concesionarios de vehículos usados. AutoDealer busca transformar el mundo de la venta de vehículos a través de la digitalización de la información. ✨🚗'
 Technologies: ["laravel","mysql","react","css","js","ts","figma","resources"]
 ---
 
 
-> Actualmente el proyecto encuentra en desarrollo, pero puedes visualizar los avances del mismo en la lista de reproducción que se encuentra al pie de la página.
+> La idea del proyecto nacio en 2023 pero en Julio del 2025 salio la version beta a producciòn
 
----
+AutoDealer es una solución web pensada para digitalizar y simplificar la gestión de concesionarios de vehículos usados. Surge como respuesta a una necesidad concreta: muchos concesionarios siguen utilizando planillas o procesos manuales para organizar su stock, ventas y gastos, lo que genera desorden, pérdida de información y falta de visibilidad sobre el negocio.
 
-## Presentación
+AutoDealer centraliza toda la operación en una sola plataforma accesible desde cualquier dispositivo, ayudando a mejorar la eficiencia, el control y la presencia online del concesionario.
 
-AutoDealer es un SaaS (Software As A Service) enfocado a la administración de concesionarios de vehículos usados.
+### ¿Qué necesidades resuelve?
 
-Su desarrollo comenzó a finales de 2023 y se espera que para mitad de 2025 esté operando en el mercado
+* Permite mantener un registro organizado del stock de vehículos, sus características, precios y estado.
 
-### Proposito
-Este servicio viene a solucionar un problema muy notorio en el sector de la venta de vehículos usados.  
-Muchos concesionarios de usados cuentan con un grave problema en la actualidad. Este problema radica en la no digitalización de sus operaciones y movimientos, ya que se tiende a anotar todo en papel o utilizar una hoja de Excel para agendar los movimientos, cosa que es un poco más eficiente, pero no es lo más recomendable.
+* Mejora el seguimiento de ventas y gastos, brindando reportes claros que ayudan a tomar mejores decisiones.
 
-El propósito es permitir a los concesionarios un espacio digital donde puedan contener todos los datos relevantes de su negocio en un solo lugar. Además, está la posibilidad de generar un catálogo online para que puedan compartir con sus clientes, junto a sus datos de contacto para que sus clientes puedan comunicarse con ellos en caso de alguna duda o interés por algún vehículo del catálogo.
+* Facilita la presencia online, ya que cada concesionario cuenta con una página web propia donde puede publicar sus vehículos.
 
+* Aporta herramientas para gestionar vendedores, su rendimiento y las ventas asignadas.
 
-### Metas
-AutoDealer Argentina tiene como meta lograr ser un catalizador, a nivel nacional, de la venta de autos usados. Lograr ser una marca importante e influyente en este sector que permita tener un mercado nacional enfocado solo en la venta de autos usados y ayude asi a los concesionarios, no solo a exponser su marca, sino tambien, a tener un lugar donde administrar su negocio.
+* Elimina la dependencia de herramientas externas como Excel o redes sociales mal gestionadas.
 
-El primer objetivo de la marca es contar con una gran cantidad de datos, con el fin de poder realizar analisis de las competencias y asi contar con datos especificos como por ejemplo el posible valor de un tipo de auto en Buenos Aires.
+### Módulos principales
 
-La informacion de todos los concesionarios del pais se encontrara centralizada y sera analizada en profundidad con el fin de poder orientar al usuario a comprar el auto que tanto desea. Tambien esta informacion sera de utilidad para los concesionarios, ya que podran medirse con la competencia y adquirir informacion relevante sobre el mercado, lo cual permitira tener una vision mas amplia a la hora de tomar decisiones.
+* Gestión de vehículos: Carga, edición, filtrado y publicación del stock.
 
-## Desarrollo
+* Ventas y gastos: Registro detallado de operaciones, ingresos, egresos y balances.
 
-### Backend
-El backend está desarrollado sobre **Laravel 10**, donde se encuentra toda la lógica de la aplicación, y utiliza Mysql como administrador de bases de datos.
+* Sitio web personalizado: Cada concesionario cuenta con su propia página, adaptada con sus colores e identidad visual.
 
-Las funcionalidades del sistema son las siguientes:
-- **Presentación de páginas**: para mostrar la información de los concesionarios. Esto incluye la información personal y los vehículos a la venta.
-- **Sistema de autenticación** con **Sanctum** para limitar el acceso a los endpoints. Como existen endpoints públicos, también existen endpoints que necesitan de ciertos permisos para poder ser accedidos
-- **Sistema de envío de mails** para permitir que los visitantes de la tienda puedan comunicarse con el concesionario de interés y, a su vez, el concesionario sea informado sobre la acción del posible cliente.
-- **API** enfocada en la administración del concesionario. Al no estar el panel administrativo dentro de Laravel, se utiliza una API para que el cliente pueda comunicarse con el sistema.
-- **Sistema de almacenamiento de imágenes personalizado** para permitir una búsqueda más óptima a la hora de requerir las imágenes.
+* Módulo de vendedores: Permite asignar ventas a distintos vendedores, hacer seguimiento y organizar mejor al equipo comercial.
 
+### Infraestructura y arquitectura
 
-### Frontend
+AutoDealer está desarrollado sobre una arquitectura moderna basada en una API centralizada, que actúa como punto de conexión entre los distintos componentes del sistema.
+El sitio web público, donde los visitantes pueden explorar los vehículos disponibles, está construido con Laravel, brindando rapidez y facilidad de navegación. Por otro lado, el sistema de gestión interna utilizado por los concesionarios fue desarrollado con React, conectándose a la API mediante tokens de acceso Bearer, lo que garantiza un intercambio de datos seguro y controlado.
 
-Existen 2 secciones de Frontend.
-- Por un lado esta la páginas de los concesionarios que trabajan en el entorno de ejecución de Laravel. Aquí tienes un [video](https://www.youtube.com/watch?v=WmIticHNggg)
-- Por otro lado está la dashboard donde los concesionarios administran sus movimientos que está desarrollada con React.
-
-En este último me voy a centrar aquí.
-
-El panel administrativo, como dije anteriormente, está desarrollado con React, ya que esta biblioteca permite desarrollar interfaces de usuario complejas y una velocidad de carga más rápida.
-
-La aplicación utiliza ciertas dependencias que le permiten funcionar de manera correcta. Las dependencias son las siguientes:
-- **React-router-dom**: Paquete clave que se encarga de manejar el enrutamiento de la aplicación, así como la validación de accesos al sistema. Si quieres ver como funciona la autorización de la aplicación aquí tienes un [video](https://www.youtube.com/watch?v=dYf6PlKoTcc). 
-- **Zustand**: Para manejar los estados globales de la aplicación.
-- **Axios**: Para realizar peticiones a la API de una forma más segura. También se aprovechan los interceptor que ofrece este paquete.
-- **Saas**: Para acelerar y estructurar los archivos de estilaje de la aplicación.
-- **Bootstrap**: Utilización de algunos componentes útiles.
-- **Crypto-js & js-cookies**: Se encargan de almacenar cookies encriptadas en el navegador y acceder a las mismas. Ambas funcionan de manera solidaria dentro de la aplicación.
-- **React-toastify**: Utilizado para mostrar notificaciones informativas al usuario. 
-- **React-icons**: Utilizacion del sistema de iconos ofrecidos.
-
-## Lista de reproducción
-Aquí podrás ver una lista de videos donde voy compartiendo el proceso de desarrollo de AutoDealer   
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=ICp4vpQNmgjt_v2G&amp;list=PLpTNol5VJzbM8FuNZp8V_JJT5n3k6I0Lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Esta separación entre frontend y backend permite una mejor escalabilidad, mantenimiento y seguridad, asegurando que cada usuario acceda únicamente a su información correspondiente.
