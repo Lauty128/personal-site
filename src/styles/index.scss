@@ -293,7 +293,7 @@
     &__content p{
         font-size: 1.1em;
 
-        & b{ color: $primary-color }
+        & b{ color: $primary-color; font-weight: 500; }
     }
     &__image{
         width: 200px;
@@ -334,8 +334,6 @@
         }
     }
 }
-
-
 
 //--------------------------------------------
 //---------------- SKILLS --------------------
